@@ -13,7 +13,7 @@ export const i18nAndAllContent: I18nAndAllContent = {
 const _data = {
     i18nAndAllContent,
     engagementsBox: (): Element => {
-        return TUICLibrary.parseHtml(`<div class="TUICEngagementsBox css-175oi2r r-1awozwy r-1efd50x r-5kkj8d r-18u37iz ${TUICLibrary.backgroundColorClass("r-2sztyj", "r-1kfrmmb", "r-1dgieki")}"></div>`).item(0);
+        return TUICLibrary.parseHtml(`<div class="TUICEngagementsBox css-175oi2r r-1awozwy r-1efd50x r-5kkj8d r-18u37iz ${TUICLibrary.backgroundColorClass("r-2sztyj", "r-1kfrmmb", "r-1dgieki")}"></div>`);
     },
     links: (id: string, article: Element, isShort: boolean): Element => {
         const returnElem = TUICLibrary.parseHtml(
@@ -22,7 +22,7 @@ const _data = {
                     <span class="css-901oao css-16my406 r-1tl8opc r-bcqeeo r-qvutc0">${TUICI18N.get("bottomTweetButtons-setting-placeEngagementsLink-" + id + (isShort ? "-short" : ""))}</span>
                 </span>
             </div>`.replace(/( |\n|\r)( |\n|\r)+/g, ""),
-        ).item(0);
+        );
         returnElem.addEventListener("click", async () => {
             article.querySelector<HTMLInputElement>(`[data-testid="caret"]`).click();
             await TUICLibrary.waitForElement(`[data-testid="tweetEngagements"]`);

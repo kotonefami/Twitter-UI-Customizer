@@ -48,7 +48,7 @@ const showLinkCardInfoElement = (link: string, domain: string, title: string, de
                 </div>
             </a>
         </div>`,
-    ).item(0);
+    );
 };
 
 // リンクカードを設置

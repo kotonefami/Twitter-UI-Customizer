@@ -60,7 +60,7 @@ const _data = {
                     `<path d="M12 3.75c-4.55 0-8.25 3.69-8.25 8.25 0 1.92.66 3.68 1.75 5.08L17.09 5.5C15.68 4.4 13.92 3.75 12 3.75zm6.5 3.17L6.92 18.5c1.4 1.1 3.16 1.75 5.08 1.75 4.56 0 8.25-3.69 8.25-8.25 0-1.92-.65-3.68-1.75-5.08zM1.75 12C1.75 6.34 6.34 1.75 12 1.75S22.25 6.34 22.25 12 17.66 22.25 12 22.25 1.75 17.66 1.75 12z" class="TUIC_USERBLOCK"></path>`,
                     info.option.isMe,
                 ),
-            ).item(0) as HTMLDivElement;
+            );
             if (!info.option.isMe) {
                 const eventFunc = async () => {
                     for (let i = 0; i <= 2; i++) {
@@ -97,7 +97,7 @@ const _data = {
                     `<path d="M18 6.59V1.2L8.71 7H5.5C4.12 7 3 8.12 3 9.5v5C3 15.88 4.12 17 5.5 17h2.09l-2.3 2.29 1.42 1.42 15.5-15.5-1.42-1.42L18 6.59zm-8 8V8.55l6-3.75v3.79l-6 6zM5 9.5c0-.28.22-.5.5-.5H8v6H5.5c-.28 0-.5-.22-.5-.5v-5zm6.5 9.24l1.45-1.45L16 19.2V14l2 .02v8.78l-6.5-4.06z" class="TUIC_USERMUTE"></path>`,
                     info.option.isMe,
                 ),
-            ).item(0) as HTMLDivElement;
+            );
 
             if (!info.option.isMe) {
                 const eventFunc = async () => {
@@ -127,7 +127,7 @@ const _data = {
                     !info.option.isMe,
                     true,
                 ),
-            ).item(0) as HTMLDivElement;
+            );
 
             if (info.option.isMe) {
                 const eventFunc = async () => {

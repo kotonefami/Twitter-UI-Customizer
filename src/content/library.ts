@@ -1,6 +1,8 @@
 import { ColorData, ProcessedClass } from "@shared/sharedData.ts";
 import { TUICPref } from "@modules/index.ts";
 
+const htmlCache: Record<string, Element> = {};
+
 export const TUICLibrary = {
     color: {
         /** RGB 配列を #xxxxxx 表記に変換します。 */
@@ -59,8 +61,9 @@ export const TUICLibrary = {
             return document.querySelector(`h1[role="heading"] > a[href="/home"]`)?.className.includes("r-116um31") ? x1 : x2;
         }
     },
-    parseHtml: (elem: string) => {
-        return new DOMParser().parseFromString(elem, "text/html").body.children;
+    parseHtml: (domText: string, needsClone: boolean = true): Element => {
+        if (!(domText in htmlCache)) htmlCache[domText] = new DOMParser().parseFromString(domText, "text/html").body.children.item(0);
+        return needsClone ? (htmlCache[domText].cloneNode(true) as Element) : htmlCache[domText];
     },
     // escapeToUseHTML: (text) => {
     //     return text

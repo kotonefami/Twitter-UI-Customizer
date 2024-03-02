@@ -277,7 +277,7 @@ function sidebarButtonProcess(bannerRoot: HTMLElement) {
                 }
                 sidebarButtonsCount += 1;
             } else if (i in _data.html) {
-                moveElem = TUICLibrary.parseHtml(_data.html[i]()).item(0);
+                moveElem = TUICLibrary.parseHtml(_data.html[i]());
                 moveElem.classList.add("NOT_TUIC_DISPNONE");
                 moveElem.onclick = _data.buttonFunctions[i];
                 moveElem.addEventListener("keydown", (e: KeyboardEvent) => {
