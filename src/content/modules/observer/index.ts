@@ -4,7 +4,7 @@ import { placeDisplayButton } from "./functions/rightSidebarTexts.ts";
 
 export const TUICObserver = new (class TUICObserver {
     /** 内部で使用される MutationObserver */
-    public observer: MutationObserver = new MutationObserver(() => this.callback());
+    public observer: MutationObserver = new MutationObserver(mutations => this.callback(mutations));
     /** 監視対象の要素 */
     public target: Element | null = null;
 
@@ -23,7 +23,16 @@ export const TUICObserver = new (class TUICObserver {
     }
 
     /** オブザーバーのコールバック */
-    public callback(): void {
+    public callback(mutations: MutationRecord[]): void {
+        // NOTE: (パフォーマンス改善) 明らかに編集する必要性のない要素の変更の場合は、実行を中断
+        const mutationElements = mutations.flatMap(m => Array.from(m.addedNodes) as Element[]);
+        if (mutationElements.length === 0 || mutationElements.every(e =>
+            e.nodeType === Node.TEXT_NODE ||
+            e.nodeName === "SCRIPT"
+        )) return;
+        // mutationElements.forEach(e => console.log(e));
+
+        // TODO: unbind の必要性
         this.unbind();
         try {
             // Twitterのアイコンに関する設定
@@ -33,7 +42,7 @@ export const TUICObserver = new (class TUICObserver {
             sidebarButtons();
 
             // ツイート関連の設定
-            tweetSettings();
+            if (mutationElements.some(e => (e as HTMLElement).dataset?.testid === "cellInnerDiv")) tweetSettings();
 
             // おすすめユーザーを非表示 (かなり処理が特殊なので他の非表示から分離)
             hideOsusumeTweets();
@@ -61,7 +70,8 @@ export const TUICObserver = new (class TUICObserver {
 
             this.bind();
         } catch (e) {
-            catchError(e, () => this.callback());
+            this.unbind();
+            catchError(e, () => this.bind());
         }
     }
 })();
