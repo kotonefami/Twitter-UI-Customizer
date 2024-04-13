@@ -1,22 +1,39 @@
 import { tweetSettings, hideOsusumeTweets, replacePost, hideElements, updateStyles, profileInitialTab, sidebarButtons, dmPage, fixTwittersBugs, changeIcon } from "./functions.ts";
-import { catchError, _Observer } from "./errorDialog.ts";
-import { placeDisplayButton } from "./functions/rightSidebarTexts.ts";
+import { catchError } from "./errorDialog.ts";
+import { placeDisplayButton } from "./functions/rightSidebarTexts.tsx";
+import { followersList } from "./functions/followersList.tsx";
 
-interface TUICObserverInterface {
-    observer: MutationObserver;
-    target: Element;
-    observerFunction: () => void;
-}
+//let time = 0;
 
-const config = {
-    childList: true,
-    subtree: true,
-};
-export const TUICObserver: TUICObserverInterface = {
-    observer: null,
-    target: null,
-    observerFunction: () => {
-        TUICObserver.observer.disconnect();
+export const TUICObserver = new (class TUICObserver {
+    /** 内部で使用される MutationObserver */
+    public observer: MutationObserver = new MutationObserver((mutations) => this.callback(mutations));
+    /** 監視対象の要素 */
+    public target: Element | null = null;
+
+    /** オブザーバーを開始します。 */
+    public bind(): void {
+        if (!this.target) throw new TypeError("Target is null");
+        this.observer.observe(this.target, {
+            childList: true,
+            subtree: true,
+        });
+    }
+
+    /** オブザーバーを停止します。 */
+    public unbind(): void {
+        this.observer.disconnect();
+    }
+
+    /** オブザーバーのコールバック
+     * 引数がなし or undefinedの場合、要素チェックは行われません*/
+    public callback(mutations: MutationRecord[] = undefined): void {
+        const mutationElements = mutations ? mutations.flatMap((m) => Array.from(m.addedNodes) as Element[]) : [];
+        if (mutations) {
+            if (mutationElements.length === 0 || mutationElements.every((e) => e.nodeType === Node.TEXT_NODE || e.nodeName === "SCRIPT")) return;
+            //mutationElements.forEach((e) => console.log(e));
+        }
+        this.unbind();
         try {
             // Twitterのアイコンに関する設定
             changeIcon();
@@ -24,11 +41,21 @@ export const TUICObserver: TUICObserverInterface = {
             // サイドバーに関する設定
             sidebarButtons();
 
-            // ツイート関連の設定
-            tweetSettings();
+            //  ツイート関連の設定
+            //  const timeTemp = Date.now();
+
+            //tweetSettings();
+            //if (mutationElements.some((e) => (e as HTMLElement).dataset?.testid === "cellInnerDiv")) tweetSettings();
+            if (mutationElements.some((e) => (e as HTMLElement).dataset?.testid === "cellInnerDiv") || (mutations ? mutations.map((m) => m.target as Element).filter((e) => e?.closest(".TUICTweetButtomBarBase")) : []).length !== 0) tweetSettings();
+
+            //  time += Date.now() - timeTemp;
+            //  console.log(time);
 
             // おすすめユーザーを非表示 (かなり処理が特殊なので他の非表示から分離)
             hideOsusumeTweets();
+
+            // フォロワー一覧にボタンを追加
+            followersList();
 
             // DMに関する設定
             dmPage();
@@ -51,12 +78,9 @@ export const TUICObserver: TUICObserverInterface = {
             // Twitterのバグを修正(現在はDMに関するもののみ)
             fixTwittersBugs();
 
-            TUICObserver.observer.observe(TUICObserver.target, config);
+            this.bind();
         } catch (e) {
-            catchError(e);
+            catchError(e, () => this.callback());
         }
-    },
-};
-
-TUICObserver.observer = new MutationObserver(TUICObserver.observerFunction);
-_Observer.observerFunction = TUICObserver.observerFunction;
+    }
+})();

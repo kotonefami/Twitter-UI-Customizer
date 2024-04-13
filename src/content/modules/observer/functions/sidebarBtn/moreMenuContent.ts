@@ -1,25 +1,8 @@
 import { TUICLibrary } from "@content/library";
 import { TUICPref } from "@content/modules";
 
-export const i18nAndAllContent: I18nAndAllContent = {
-    all: ["premium", "bookmarks", "communities", "monetization", "pro", "ads", "settings", "separator"],
-    i18n: {
-        bookmarks: "sidebarButtons-bookmarks",
-        monetization: "sidebarButton-moreMenuItems-monetization",
-        separator: "sidebarButton-moreMenuItems-separator",
-        creatorStudio: "sidebarButton-moreMenuItems-creatorStudio",
-        professionalTool: "sidebarButton-moreMenuItems-professionalTool",
-        settingsAndSupport: "sidebarButton-moreMenuItems-settingsAndSupport",
-        communities: "sidebarButtons-communities",
-        settings: "sidebarButton-moreMenuItems-settings",
-        pro: "sidebarButton-moreMenuItems-pro",
-        ads: "sidebarButton-moreMenuItems-ads",
-        premium: "sidebarButton-moreMenuItems-premium",
-    },
-};
-
 const _data = {
-    ...i18nAndAllContent,
+    all: TUICPref.getSettingIDs("sidebarSetting.moreMenuItems"),
     selectors: {
         bookmarks: `[data-testid="Dropdown"] [href="/i/bookmarks"]`,
         monetization: `[data-testid="Dropdown"] [href="/settings/monetization"]`,
@@ -32,6 +15,7 @@ const _data = {
         pro: `[data-testid="Dropdown"] [href="https://tweetdeck.twitter.com"]`,
         ads: `[data-testid="Dropdown"] [href*="ads.twitter.com"]`,
         premium: `[data-testid="Dropdown"] [href="/i/verified-choose"]`,
+        jobs: `[data-testid="Dropdown"] [href="/jobs"]`,
     },
     type: {
         bookmarks: "menuitem",
@@ -45,6 +29,7 @@ const _data = {
         pro: "menuitem",
         ads: "menuitem",
         premium: "menuitem",
+        jobs: "menuitem",
     },
 };
 

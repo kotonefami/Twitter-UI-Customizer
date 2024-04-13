@@ -6,7 +6,7 @@
             </h2>
             <div id="TUIC_visible" class="TUIC_selectbox TUICSelectBox-left" :style="{ '--contentCount': _contentCount }">
                 <div v-for="i in list" :key="i" :value="i" :id="i" class="TUICUpDownContent" @click="clickEv(i)" :TUICSelectedUpDownContent="i === selectedElem">
-                    <span>{{ TUICI18N.get(TUICData[id].i18n[i]) }}</span>
+                    <span>{{ TUICI18N.get(TUICPref.getSettingI18n(id, i)) }}</span>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
             </h2>
             <div id="TUIC_invisible" class="TUIC_selectbox TUICSelectBox-right" :style="{ '--contentCount': _contentCount }">
                 <div
-                    v-for="i in TUICData[id].all.filter((value) => {
+                    v-for="i in TUICPref.getSettingIDs(id).filter((value: string) => {
                         return !list.includes(value);
                     })"
                     :key="i"
@@ -33,7 +33,7 @@
                     @click="clickEv(i)"
                     :TUICSelectedUpDownContent="i === selectedElem"
                 >
-                    <span>{{ TUICI18N.get(TUICData[id].i18n[i]) }}</span>
+                    <span>{{ TUICI18N.get(TUICPref.getSettingI18n(id, i)) }}</span>
                 </div>
             </div>
         </div>
@@ -54,7 +54,6 @@ import RESET from "@content/icons/arrow/reset.svg?component";
 // import { ARROW_LEFT, ARROW_UP, ARROW_DOWN, ARROW_RIGHT, RESET } from "@content/data/icons";
 
 import { TUICI18N } from "@modules/i18n";
-import { TUICData } from "@content/data";
 import { TUICPref } from "@content/modules";
 
 import { updateClasses } from "@modules/htmlClass/classManager";
@@ -114,7 +113,7 @@ const toDown = () => {
 
 const toDefault = () => {
     const settingId = props.id;
-    list.value = structuredClone(TUICPref.defaultPref[settingId]);
+    list.value = structuredClone(TUICPref.getDefaultPref(settingId).data);
     selectedElem.value = "";
     apply2Settings();
 };
@@ -151,7 +150,7 @@ const UpdownButtonFuncs = [
         tooltiptag: "settingUI-upDownList-restoreDefault",
     },
 ];
-const UDALL = TUICData[props.id].all;
+const UDALL = TUICPref.getSettingIDs(props.id);
 let _contentCount = 5;
 if (UDALL.length > 5) {
     _contentCount = UDALL.length;

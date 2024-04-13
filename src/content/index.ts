@@ -14,13 +14,21 @@ import { TUICPref } from "@modules/index.ts";
 import { initIconObserverFunction } from "@modules/observer/functions/changeIcon.ts";
 import { titleObserverFunction } from "@modules/observer/titleObserver.ts";
 import { updateClasses } from "./modules/htmlClass/classManager";
+import { placeSettingObserver } from "./modules/settings";
 
 (async () => {
-    // I18Nを取得
-    await TUICI18N.fetch();
+    await Promise.all([
+        // NOTE: i18n データのフェッチ
+        TUICI18N.fetch(),
 
-    // Twitterの親要素を待機
-    await TUICLibrary.waitForElement("#react-root");
+        // NOTE: 設定の更新
+        TUICPref.updatePref(),
+
+        // NOTE: Twitter のレンダリングを待機
+        TUICLibrary.waitForElement("#react-root"),
+    ]);
+
+    TUICPref.setPref("", TUICPref.mergeDefaultPref(TUICPref.getPref("")));
 
     // 起動メッセージ
     console.log(
@@ -29,8 +37,6 @@ import { updateClasses } from "./modules/htmlClass/classManager";
         `font-family: system-ui, -apple-system, sans-serif, monospace; margin: 0.5em; color: ${isSafemode ? "#5a9e1b" : "#1da1f2"};`,
     );
 
-    // 旧バージョンからのPrefのアップデート
-    await TUICPref.updatePref();
     // 前起動時のTUICの要素・Classが残っていればすべて削除
     updateClasses(true);
     for (const elem of document.querySelectorAll(".TUICOriginalContent")) {
@@ -54,19 +60,18 @@ import { updateClasses } from "./modules/htmlClass/classManager";
     }
 
     // タイトル変更のためのObserver
-    await TUICLibrary.waitForElement("title");
-    titleObserverFunction();
+    TUICLibrary.waitForElement("title").then(titleObserverFunction);
 
     // TLUI用のObserver
     startTluiObserver();
 
     // メインのObserver
-    (TUICObserver.target = document.querySelector("body")), TUICObserver.observer.observe(TUICObserver.target, TUICObserver.config);
-    TUICObserver.observerFunction();
+    (TUICObserver.target = document.querySelector("body")), TUICObserver.bind();
+    TUICObserver.callback();
+    placeSettingObserver();
 
     // フォントサイズ変更の検出のためのObserver
-    const bodyAttributeObserver = new MutationObserver(applySystemCss);
-    bodyAttributeObserver.observe(document.querySelector("body"), {
+    new MutationObserver(applySystemCss).observe(document.querySelector("body"), {
         childList: false,
         subtree: false,
         attributes: true,
