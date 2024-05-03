@@ -20,6 +20,28 @@ const getPointerFromKey = (object: object, key: string) => {
     }
 };
 
+type KeyIdentifiers<I extends keyof typeof ids = keyof typeof ids> = I | `${I}.${typeof ids[I]["values"][number]["id"]}`;
+
+// https://zenn.dev/lollipop_onl/articles/bd59bf7f97dd305d3ed2
+// type PlaceholderType = string | number | boolean | bigint;
+// type Join<T extends readonly PlaceholderType[], S extends string> =
+//     T extends readonly [infer P, ...infer R]
+//     ? P extends PlaceholderType
+//     ? [] extends R
+//     ? P
+//     : `${P}${S}${Join<R, S>}`
+//     : ''
+//     : [] extends T
+//     ? ''
+//     : string;
+// type Split<T extends string, S extends string> =
+//     T extends `${infer P}${S}${infer R}`
+//     ? string extends P
+//     ? [P]
+//     : [P, ...Split<R, S>]
+//     : [T];
+// type B<K extends A> = Split<A, ".">
+
 /*
 getPref(identifier: ID | string ...
 とすると、identifier にID型を持たせつつ string も許容してくれます
@@ -35,7 +57,7 @@ getPref(identifier: ID | string ...
  * @param {object} source 使用するPrefのObject。
  * @return {unknown} 取得した値(identifierが空文字ならTUICのPref全体)
  */
-export function getPref<ID extends A>(identifier: ID, source = config) {
+export function getPref<ID extends KeyIdentifiers>(identifier: ID, source = config) {
     const { object, key } = getPointerFromKey(source, identifier);
     return object[key];
 }
@@ -52,7 +74,7 @@ type ConfigTypeTable = {
  * @param {string} value 設定する値
  * @param {object} source 使用するPrefのObject。
  */
-export function setPref<ID extends A>(identifier: "" | ID, value: ConfigTypeTable[Extract<typeof ids[Extract<ID, keyof typeof ids>]["type"], keyof ConfigTypeTable>], source = config) {
+export function setPref<ID extends KeyIdentifiers>(identifier: "" | ID, value: ConfigTypeTable[Extract<typeof ids[Extract<ID, keyof typeof ids>]["type"], keyof ConfigTypeTable>], source = config) {
     if (identifier == "") {
         config = value;
     } else {
