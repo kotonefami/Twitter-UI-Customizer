@@ -20,6 +20,14 @@ const getPointerFromKey = (object: object, key: string) => {
     }
 };
 
+/*
+getPref(identifier: ID | string ...
+とすると、identifier にID型を持たせつつ string も許容してくれます
+
+あとupdatePrefにあるような古い設定キーに関するエラーはどうにかしてください
+いずれにしろprodに持ってくのは非推奨です
+*/
+
 /**
  * TUICのPrefの値を取得します。
  *
@@ -27,10 +35,14 @@ const getPointerFromKey = (object: object, key: string) => {
  * @param {object} source 使用するPrefのObject。
  * @return {unknown} 取得した値(identifierが空文字ならTUICのPref全体)
  */
-export function getPref(identifier: string, source = config) {
+export function getPref<ID extends A>(identifier: ID, source = config) {
     const { object, key } = getPointerFromKey(source, identifier);
     return object[key];
 }
+
+type ConfigTypeTable = {
+    boolean: boolean;
+};
 
 /**
  * TUICのPrefの値を設定します。
@@ -40,7 +52,7 @@ export function getPref(identifier: string, source = config) {
  * @param {string} value 設定する値
  * @param {object} source 使用するPrefのObject。
  */
-export function setPref(identifier: string, value: unknown, source = config) {
+export function setPref<ID extends A>(identifier: "" | ID, value: ConfigTypeTable[Extract<typeof ids[Extract<ID, keyof typeof ids>]["type"], keyof ConfigTypeTable>], source = config) {
     if (identifier == "") {
         config = value;
     } else {
