@@ -3,13 +3,13 @@ export default {
     common: {
         name: "__MSG_extensionName__",
         description: "__MSG_extensionDescription__",
-        version: "4.2.3",
+        version: "4.2.4",
         default_locale: "ja",
         content_scripts: [
             {
                 matches: ["*://*.twitter.com/*"],
                 js: ["inject.js"],
-                css: ["./styles/style-tuicSettingPage.css", "./styles/style-polyfillForTwitter.css", "./styles/style-tuicColor.css", "./styles/style-tuicFeatures.css", "./styles/style-tlui.css", "./styles/firefox/style-compat.css"],
+
                 run_at: "document_start",
             },
         ],
