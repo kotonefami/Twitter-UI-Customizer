@@ -20,7 +20,7 @@
                 <span>Twitter UI Customizer</span>
             </div>
             <div>
-                <a href="https://github.com/kaonasi-biwa/Twitter-UI-Customizer" target="_blank">
+                <a href="https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96">
                         <path
                             fill-rule="evenodd"

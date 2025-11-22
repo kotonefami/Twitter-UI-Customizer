@@ -2,13 +2,13 @@ let updateID: "iconClick" | "runBrowser" | "openTwitter";
 
 const updateNotification = () => {
     chrome.tabs.create({
-        url: "https://github.com/kaonasi-biwa/Twitter-UI-Customizer/releases",
+        url: "https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/releases",
     });
     chrome.notifications.onClicked.removeListener(updateNotification);
 };
 
 const updateCheck = async () => {
-    const githubVersion = await fetch("https://api.github.com/repos/kaonasi-biwa/Twitter-UI-Customizer/releases/latest", { cache: "no-store" })
+    const githubVersion = await fetch("https://api.github.com/repos/Ablaze-MIRAI/Twitter-UI-Customizer/releases/latest", { cache: "no-store" })
         .then((res) => res.json())
         .then((json) => json.tag_name);
     const extensionVersion = chrome.runtime.getManifest().version;

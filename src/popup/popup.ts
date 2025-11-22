@@ -34,20 +34,20 @@ window.onload = async () => {
 
     const $link5 = document.getElementById("link5");
     if (isFirefox && $link5 instanceof HTMLAnchorElement) {
-        fetch("https://api.github.com/repos/kaonasi-biwa/Twitter-UI-Customizer/releases/latest", { cache: "no-store" })
+        fetch("https://api.github.com/repos/Ablaze-MIRAI/Twitter-UI-Customizer/releases/latest", { cache: "no-store" })
             .then((res) => res.json())
             .then((json) => json.tag_name)
             .then((version) => {
                 if (!version) {
                     return;
                 }
-                $link5.href = `https://github.com/kaonasi-biwa/Twitter-UI-Customizer/releases/download/${version}/Twitter_UI_Customizer_Firefox.xpi`;
+                $link5.href = `https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/releases/download/${version}/Twitter_UI_Customizer_Firefox.xpi`;
                 $link5.hidden = false;
             });
     } // Firefoxの場合のみ有効
 
     document.getElementById("link6").onclick = () => {
-        chrome.tabs.create({ url: "https://github.com/kaonasi-biwa/Twitter-UI-Customizer/blob/main/LICENSE" });
+        chrome.tabs.create({ url: "https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/blob/main/LICENSE" });
     };
 
     document.getElementById("link7").onclick = () => {

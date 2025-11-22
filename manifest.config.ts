@@ -72,7 +72,7 @@ const manifest: {
         },
         developer: {
             name: "kaonasi_biwa",
-            url: "https://github.com/kaonasi-biwa/Twitter-UI-Customizer",
+            url: "https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer",
         },
     },
     // Chromium設定
