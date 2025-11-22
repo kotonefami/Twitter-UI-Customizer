@@ -4,7 +4,7 @@
 また、ビルド方法が変わりました。
 [CONTRIBUTING.md](../CONTRIBUTING.md)にも記載されているように、`pnpm debug`でパッケージ、及びデバッグが実行されます。
 
-参照：[PR #73](https://github.com/kaonasi-biwa/Twitter-UI-Customizer/pull/73) （2023年9月2日）
+参照：[PR #73](https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/pull/73) （2023年9月2日）
 
 ## ビルドコマンド一覧
 

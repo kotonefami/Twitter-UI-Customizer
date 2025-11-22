@@ -65,7 +65,7 @@
             <IconButton i18n="addonInfo-TUICOfficialTwitter" :icon="ICON_TWITTER" @click="openOfficialTwitter" />
             <IconButton i18n="addonInfo-github" :icon="ICON_GITHUB" @click="openGithub" />
         </div>
-        <a class="TUIC_setting_bottom_copyright" href="https://github.com/kaonasi-biwa/Twitter-UI-Customizer/blob/main/LICENSE">
+        <a class="TUIC_setting_bottom_copyright" href="https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/blob/main/LICENSE">
             <span style=" font-size: 15px;color: rgb(113 118 124); text-align: center">&copy; 2022-2025 kaonasi-biwa</span>
         </a>
     </div>
@@ -121,13 +121,13 @@ import { TUICI18N } from "@content/modules/i18n";
 const BootstrapIconsURL = chrome.runtime.getURL(BootstrapIcons);
 
 function openReadme() {
-    openInNewTab("https://github.com/kaonasi-biwa/Twitter-UI-Customizer/blob/main/README.md");
+    openInNewTab("https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/blob/main/README.md");
 }
 function openOfficialTwitter() {
     openInNewTab("https://twitter.com/TUIC_official");
 }
 function openGithub() {
-    openInNewTab("https://github.com/kaonasi-biwa/Twitter-UI-Customizer");
+    openInNewTab("https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer");
 }
 function openInNewTab(url: string) {
     window.open(url, "_blank");
