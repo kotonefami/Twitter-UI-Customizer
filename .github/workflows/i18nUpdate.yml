@@ -11,6 +11,9 @@ on:
       - "scripts/update-i18n.ts"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   update-i18n:
     if: github.repository_owner == 'Ablaze-MIRAI' || github.event_name == 'workflow_dispatch'
