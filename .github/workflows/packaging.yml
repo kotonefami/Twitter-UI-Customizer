@@ -35,7 +35,7 @@ jobs:
       - name: Archive
         run: |
           pnpm install
-          pnpm build:firefox
+          pnpm run build:firefox
           cp ./dist/twitter_ui_customizer-*.zip ./Twitter_UI_Customizer_Firefox.xpi
           cp ./dist/index.js ./codeToDebug.js
       - name: Publish
@@ -65,7 +65,7 @@ jobs:
       - name: Archive
         run: |
           pnpm install
-          pnpm build:chromium
+          pnpm run build:chromium
           cp ./dist/twitter_ui_customizer-*.zip ./Twitter_UI_Customizer_Chromium.zip
       - name: Publish
         uses: actions/upload-artifact@v5
@@ -89,7 +89,7 @@ jobs:
       - name: Archive
         run: |
           pnpm install
-          pnpm vite build --mode chromiumCRX
+          pnpm exec vite build --mode chromiumCRX
         env:
           GITHUB_REPO: ${{ github.repository }}
       - name: CRX
