@@ -399,6 +399,7 @@ export const TUICSettings = {
         values: [
             { id: "hideDraft", i18n: "composetweet-hideDraft", default: false },
             { id: "remainOpened", i18n: "composetweet-remainOpened", default: false },
+            { id: "copyHashtag", i18n: "composetweet-copyHashtag", default: false },
         ],
     },
 
