@@ -16,7 +16,7 @@ export function composetweet() {
             if(getPref("composetweet.copyHashtag")){
                 const hashs = []
                 for(const sentence of document.querySelectorAll(`[data-testid="tweetTextarea_0"] span[data-text="true"]`)){
-                    if (sentence?.textContent && sentence.textContent.startsWith("#")) hashs.push(sentence.textContent)
+                    if (sentence?.textContent && (sentence.textContent.startsWith("#") || sentence.textContent.startsWith("$"))) hashs.push(sentence.textContent)
                 }
                 if(hashs.length > 0){
                     navigator.clipboard.writeText(hashs.join(" "));
