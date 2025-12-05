@@ -1,5 +1,7 @@
+import { TUICI18N } from "@content/modules/i18n";
 import { getPref } from "@content/modules/pref";
 import { processElement, waitForElement } from "@content/modules/utils/controlElements";
+import { placeToastMessage } from "@content/modules/utils/toastMessage";
 import { ProcessedClass } from "@shared/sharedData";
 
 export function composetweet() {
@@ -18,6 +20,7 @@ export function composetweet() {
                 }
                 if(hashs.length > 0){
                     navigator.clipboard.writeText(hashs.join(" "));
+                    placeToastMessage(TUICI18N.get("bottomTweetButtons-urlCopy-layer"));
                 }
             }
         });
