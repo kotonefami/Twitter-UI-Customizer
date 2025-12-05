@@ -56,6 +56,7 @@ export const TUICSettings = {
         values: [
             { id: "likeToFavo", i18n: "bottomTweetButtons-setting-likeToFavo", default: false },
             { id: "bottomScroll", i18n: "bottomTweetButtons-setting-visibleScrollBar", default: false },
+            { id: "hideOnTimeline", i18n: "bottomTweetButtons-setting-hideOnTimeline", default: false },
         ],
     },
     "tweetDisplaySetting.buttonsInvisible": {
