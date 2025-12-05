@@ -240,7 +240,8 @@ export const TUICSettings = {
             { id: "settings", i18n: "sidebarButtons-settings" },
             { id: "spaces", i18n: "sidebarButton-moreMenuItems-spaces" },
             { id: "jobs", i18n: "sidebarButton-moreMenuItems-jobs" },
-            { id: "grok", i18n: "sidebarButtons-grok", default: false },
+            { id: "grok", i18n: "sidebarButtons-grok" },
+            { id: "chat", i18n: "sidebarButtons-chat" },
         ],
     },
     "sidebarSetting.buttonConfig": {
@@ -279,6 +280,7 @@ export const TUICSettings = {
     "sidebarSetting.moreMenuItems": {
         type: "boolean",
         values: [
+            { id: "chat", i18n: "sidebarButtons-chat", default: false },
             { id: "lists", i18n: "sidebarButtons-lists", default: false },
             { id: "premium", i18n: "sidebarButton-moreMenuItems-premium", default: false },
             { id: "bookmarks", i18n: "sidebarButtons-bookmarks", default: false },
