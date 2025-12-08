@@ -9,7 +9,6 @@ import { placeToastMessage } from "@content/modules/utils/toastMessage";
 
 export const willClickRT = { data: false };
 
-
 // ツイートのボタンを作るためのデータたち
 export const tweetButtonData: Record<string, {
     svg: () => JSX.Element;

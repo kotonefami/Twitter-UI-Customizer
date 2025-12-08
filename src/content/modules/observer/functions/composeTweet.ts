@@ -9,16 +9,16 @@ export function composetweet() {
         const composeTweetButton = document.querySelector<HTMLButtonElement>(`[data-testid="tweetButton"]`);
         composeTweetButton.addEventListener("click", async () => {
             if (composeTweetButton.disabled) return;
-            if(getPref("composetweet.remainOpened")){
+            if (getPref("composetweet.remainOpened")) {
                 await waitForElement(`[data-testid="toast"]`);
                 window.setTimeout(() => document.querySelector<HTMLButtonElement>(`[data-testid="SideNav_NewTweet_Button"]`)?.click(), 500);
             }
-            if(getPref("composetweet.copyHashtag")){
-                const hashs = []
-                for(const sentence of document.querySelectorAll(`[data-testid="tweetTextarea_0"] span[data-text="true"]`)){
-                    if (sentence?.textContent && (sentence.textContent.startsWith("#") || sentence.textContent.startsWith("$"))) hashs.push(sentence.textContent)
+            if (getPref("composetweet.copyHashtag")) {
+                const hashs = [];
+                for (const sentence of document.querySelectorAll(`[data-testid="tweetTextarea_0"] span[data-text="true"]`)) {
+                    if (sentence?.textContent && (sentence.textContent.startsWith("#") || sentence.textContent.startsWith("$"))) hashs.push(sentence.textContent);
                 }
-                if(hashs.length > 0){
+                if (hashs.length > 0) {
                     navigator.clipboard.writeText(hashs.join(" "));
                     placeToastMessage(TUICI18N.get("bottomTweetButtons-urlCopy-layer"));
                 }

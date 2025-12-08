@@ -165,7 +165,7 @@ export function tweetSettings() {
                         showLinkCardInfo(articleInfo);
 
                         // ツイート下ボタンの並び替え
-                        if(articleInfo.option.isBigArticle || !getPref("tweetDisplaySetting.option.hideOnTimeline")){
+                        if (articleInfo.option.isBigArticle || !getPref("tweetDisplaySetting.option.hideOnTimeline")) {
                             let lastButton: HTMLElement | null = null;
                             for (const i of getPref("visibleButtons")) {
                                 let processingButton: HTMLElement | null = null;
@@ -206,8 +206,8 @@ export function tweetSettings() {
 
                         for (const i of _data.all) {
                             if (
-                                (!articleInfo.option.isBigArticle && getPref("tweetDisplaySetting.option.hideOnTimeline")) || 
-                                (!getPref("visibleButtons").includes(i) && i in underTweetButtons)
+                                (!articleInfo.option.isBigArticle && getPref("tweetDisplaySetting.option.hideOnTimeline"))
+                                || (!getPref("visibleButtons").includes(i) && i in underTweetButtons)
                             ) {
                                 hideElement(underTweetButtons[i]);
                             }

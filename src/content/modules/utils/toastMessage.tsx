@@ -32,7 +32,7 @@ const toastMessage = (message: string): (() => JSX.Element) => {
                 </div>
             </div>
         );
-    }
+    };
 };
 
 export const placeToastMessage = (message: string, duration = 3000) => {

@@ -43,7 +43,7 @@ const tuicButtonUrl = {
     settings: ["/settings", "/settings/"],
     jobs: "/jobs",
     spaces: "/i/spaces/start",
-    chat: "/i/chat"
+    chat: "/i/chat",
 };
 
 function sidebarButtons() {
