@@ -1,15 +1,13 @@
 {
     "include": ["i18n", "scripts"],
     "exclude": ["scripts/vite-plugin"],
-    "typeAcquisition": {
-        "enable": true
-    },
     "compilerOptions": {
         "module": "preserve",
         "target": "ESNext",
         "lib": ["ESNext", "DOM"],
         "noEmit": true,
         "skipLibCheck": true,
+        "types": ["@types/node"],
         "allowImportingTsExtensions": true,
         "erasableSyntaxOnly": true,
         "verbatimModuleSyntax": true
