@@ -2,7 +2,8 @@
     "include": ["i18n", "scripts"],
     "exclude": ["scripts/vite-plugin"],
     "compilerOptions": {
-        "module": "preserve",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "target": "ESNext",
         "lib": ["ESNext", "DOM"],
         "noEmit": true,

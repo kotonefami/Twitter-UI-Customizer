@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import fsSync from "node:fs";
 import type { Manifest } from "webextension-polyfill";
-import manifest from "../manifest.config";
+import manifest from "../manifest.config.ts";
 
 export async function changeManifest(target: string) {
     if (target !== "firefox" && target !== "chromium" && target !== "chromiumCRX") return;

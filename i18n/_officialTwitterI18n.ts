@@ -1,4 +1,4 @@
-import { TranslateKey } from "./_officialTwitterI18nConfig";
+import type { TranslateKey } from "./_officialTwitterI18nConfig.ts";
 
 export type TUICI18nKey = string;
 export const TUICI18ns: Record<TUICI18nKey, TranslateKey> = {

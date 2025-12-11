@@ -1,9 +1,9 @@
 import fs from "node:fs/promises";
 
-import { langList, type Locale } from "../i18n/_langList";
-import { TUICI18ns } from "../i18n/_officialTwitterI18n";
-import { config, type TranslateKey } from "../i18n/_officialTwitterI18nConfig";
-import { generatePWAManifest } from "./pwa-manifest/generate-manifest";
+import { langList, type Locale } from "../i18n/_langList.ts";
+import { TUICI18ns } from "../i18n/_officialTwitterI18n.ts";
+import { config, type TranslateKey } from "../i18n/_officialTwitterI18nConfig.ts";
+import { generatePWAManifest } from "./pwa-manifest/generate-manifest.ts";
 
 (async () => {
     // CLI引数または_langList.tsファイルからロケールを取得

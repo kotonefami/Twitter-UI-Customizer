@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 
-import { pwaManifest } from "./pwa-manifest.config";
+import { pwaManifest } from "./pwa-manifest.config.ts";
 
 export const generatePWAManifest = async (locale: string, ti18n: Record<string, string>) => {
     await fs.writeFile(
