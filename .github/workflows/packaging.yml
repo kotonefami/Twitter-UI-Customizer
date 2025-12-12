@@ -94,7 +94,7 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
       - name: CRX
         run: |
-          pnpm dlx tsx ./scripts/generate-crx.ts
+          node ./scripts/generate-crx.ts
         env:
           GITHUB_REPO: ${{ github.repository }}
           CHROME_EXTENSION_KEY: ${{ secrets.CHROME_EXTENSION_KEY }}
