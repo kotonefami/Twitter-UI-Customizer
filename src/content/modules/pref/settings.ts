@@ -226,6 +226,7 @@ export const TUICSettings = {
             { id: "communities", i18n: "sidebarButtons-communities" },
             { id: "notifications", i18n: "sidebarButtons-notifications" },
             { id: "messages", i18n: "sidebarButtons-messages" },
+            // { id: "chat", i18n: "sidebarButtons-chat" },
             { id: "bookmarks", i18n: "sidebarButtons-bookmarks" },
             { id: "profile", i18n: "sidebarButtons-profile" },
             { id: "moremenu", i18n: "sidebarButtons-moremenu" },
@@ -242,7 +243,6 @@ export const TUICSettings = {
             { id: "spaces", i18n: "sidebarButton-moreMenuItems-spaces" },
             { id: "jobs", i18n: "sidebarButton-moreMenuItems-jobs" },
             { id: "grok", i18n: "sidebarButtons-grok" },
-            { id: "chat", i18n: "sidebarButtons-chat" },
         ],
     },
     "sidebarSetting.buttonConfig": {
