@@ -1,7 +1,7 @@
 import type { Plugin } from "vite";
 import type { ChildProcessWithoutNullStreams } from "node:child_process";
 import { isMainThread } from "node:worker_threads";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { type WebExtRunArgs, WebExtRun } from "./web-ext.ts";
 
 dotenv.config({ path: ".env.local" });
