@@ -1,9 +1,9 @@
 import fs from "node:fs/promises";
 
-import { langList, type Locale } from "../i18n/_langList";
-import { TUICI18ns } from "../i18n/_officialTwitterI18n";
-import { config, type TranslateKey } from "../i18n/_officialTwitterI18nConfig";
-import { generatePWAManifest } from "./pwa-manifest/generate-manifest";
+import { langList, type Locale } from "../i18n/_langList.ts";
+import { TUICI18ns } from "../i18n/_officialTwitterI18n.ts";
+import { config, type TranslateKey } from "../i18n/_officialTwitterI18nConfig.ts";
+import { generatePWAManifest } from "./pwa-manifest/generate-manifest.ts";
 
 (async () => {
     // CLI引数または_langList.tsファイルからロケールを取得
@@ -35,18 +35,19 @@ import { generatePWAManifest } from "./pwa-manifest/generate-manifest";
         // } = JSON.parse(await fs.readFile("./i18n/_officialTwitterI18nConfig.json", "utf8"));
 
         // i18nデータを格納するオブジェクト
-        const i18nObjectNew: Partial<Record<Locale, Record<string, string>>> = {};
-        const i18nObject: Partial<Record<Locale, Record<string, string>>> = {};
-        const i18nObjectOld: Partial<Record<Locale, Record<string, string>>> = {};
+        type I18nObj = Partial<Record<Locale, Record<string, string>>>;
+        const i18nObjectNew: I18nObj = {};
+        const i18nObject: I18nObj = {};
+        const i18nObjectOld: I18nObj = {};
 
         // 非同期リクエストを使用してi18nデータを取得
         console.log("Fetching i18n...");
         await Promise.all(
             locales
                 .map((lang) => [
-                    (async () => (i18nObjectNew[lang] = await (await fetch(`https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/master/docs/json/i18n/${lang}.json`)).json()))(),
-                    (async () => (i18nObject[lang] = await (await fetch(`https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/legacy-twitter/docs/json/i18n/${lang}.json`)).json()))(),
-                    (async () => (i18nObjectOld[lang] = await (await fetch(`https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/1f9db55ad6a0243f0d20cf1cb46d3a13fd8d6c39/docs/json/i18n/${lang}.json`)).json()))(),
+                    (async () => (i18nObjectNew[lang] = await (await fetch(`https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/master/docs/json/i18n/${lang}.json`)).json() as I18nObj[Locale]))(),
+                    (async () => (i18nObject[lang] = await (await fetch(`https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/legacy-twitter/docs/json/i18n/${lang}.json`)).json() as I18nObj[Locale]))(),
+                    (async () => (i18nObjectOld[lang] = await (await fetch(`https://raw.githubusercontent.com/fa0311/TwitterInternalAPIDocument/1f9db55ad6a0243f0d20cf1cb46d3a13fd8d6c39/docs/json/i18n/${lang}.json`)).json() as I18nObj[Locale]))(),
                 ])
                 .flat(),
         );

@@ -64,7 +64,7 @@ export function replacePost() {
             const tweetText = document.querySelector('[data-testid="tweetText"]');
             if (tweetText) {
                 for (const elem of getNotReplacedElements(
-                    '[role="button"]:not([data-testid="tweet-text-show-more-link"]) > span > span > span',
+                    ':scope > :not([data-testid="tweetText"]) > [role="button"]:not([data-testid="tweet-text-show-more-link"]) > span > span > span',
                     tweetText.parentElement,
                 )) {
                     elem.textContent = TUICI18N.get("XtoTwitter-PostToTweet-translateTweet");

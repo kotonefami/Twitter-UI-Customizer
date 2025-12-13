@@ -11,6 +11,9 @@ on:
       - "scripts/update-i18n.ts"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   update-i18n:
     if: github.repository_owner == 'Ablaze-MIRAI' || github.event_name == 'workflow_dispatch'
@@ -18,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Get pnpm version from package.json
         id: pnpm-version
@@ -30,7 +33,7 @@ jobs:
           version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: "package.json"
           cache: "pnpm"
@@ -40,7 +43,7 @@ jobs:
           pnpm install
           git checkout -- .
           git pull
-          pnpm dlx tsx ./scripts/update-i18n.ts
+          node ./scripts/update-i18n.ts
 
           if [ -z "$(git status --porcelain)" ]; then
             echo "::notice::No ti18n changes"

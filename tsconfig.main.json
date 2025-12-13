@@ -1,0 +1,23 @@
+{
+    "include": ["i18n/_langList.ts", "public", "src", "third-party"],
+    "compilerOptions": {
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "target": "ES2023",
+        "lib": ["ES2023", "DOM", "DOM.Iterable"],
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "types": ["@types/chrome", "vite/client", "vite-svg-loader"],
+        "paths": {
+            "@content/*": ["./src/content/*"],
+            "@shared/*": ["./src/shared/*"],
+            "@modules/*": ["./src/content/modules/*"],
+            "@i18nData/*": ["./i18n/*"],
+            "@third-party/*": ["./third-party/*"],
+        },
+    },
+}

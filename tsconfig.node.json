@@ -1,0 +1,15 @@
+{
+    "include": ["i18n", "scripts", "*.ts"],
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ESNext",
+        "lib": ["ESNext"],
+        "noEmit": true,
+        "skipLibCheck": true,
+        "types": ["@types/node"],
+        "allowImportingTsExtensions": true,
+        "erasableSyntaxOnly": true,
+        "verbatimModuleSyntax": true,
+    },
+}

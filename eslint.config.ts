@@ -31,7 +31,7 @@ export default tseslint.config(
         files: ["**/*.{js,ts,tsx,vue}"],
         languageOptions: {
             parserOptions: {
-                ecmaVersion: 2022,
+                ecmaVersion: 2023,
                 sourceType: "module",
             },
         },

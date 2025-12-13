@@ -1,4 +1,5 @@
-import { transform, ReturnedRule, Visitor, CustomAtRules } from "lightningcss";
+import { transform } from "lightningcss";
+import type { ReturnedRule, Visitor, CustomAtRules } from "lightningcss";
 import postcss from "postcss";
 import postcssUnocss from "unocss/postcss";
 import type { UserConfig } from "unocss";
