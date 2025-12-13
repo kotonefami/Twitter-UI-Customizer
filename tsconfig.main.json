@@ -1,5 +1,5 @@
 {
-    "include": ["i18n/_langList.ts", "scripts/vite-plugin", "public", "src", "third-party"],
+    "include": ["i18n/_langList.ts", "public", "src", "third-party"],
     "compilerOptions": {
         "jsx": "preserve",
         "jsxImportSource": "solid-js",

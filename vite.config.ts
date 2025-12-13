@@ -1,18 +1,18 @@
-import { UserConfig, defineConfig } from "vite";
+import { type UserConfig, defineConfig } from "vite";
 
 import path from "node:path";
 import * as fs from "node:fs/promises";
 
 // Vite Plugins
 import svgLoader from "vite-svg-loader";
-import vitePluginWebExt from "./scripts/vite-plugin/vite-plugin-web-ext";
+import vitePluginWebExt from "./scripts/vite-plugin/vite-plugin-web-ext.ts";
 import vue from "@vitejs/plugin-vue";
 import { browserslistToTargets, composeVisitors } from "lightningcss";
-import { lightningcssPluginUnoCSS, vitePluginUnoCSS } from "./scripts/vite-plugin/unocss";
+import { lightningcssPluginUnoCSS, vitePluginUnoCSS } from "./scripts/vite-plugin/unocss.ts";
 import solidPlugin from "vite-plugin-solid";
 //
 
-import { changeManifest } from "./scripts/change-manifest";
+import { changeManifest } from "./scripts/change-manifest.ts";
 
 const r = (str: string): string => {
     return path.resolve(import.meta.dirname, str);

@@ -1,6 +1,5 @@
 {
-    "include": ["i18n", "scripts"],
-    "exclude": ["scripts/vite-plugin"],
+    "include": ["i18n", "scripts", "*.ts"],
     "compilerOptions": {
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
