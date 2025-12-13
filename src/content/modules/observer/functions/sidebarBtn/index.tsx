@@ -19,7 +19,7 @@ export const SidebarButtonSelectors = {
     explore: '[href="/explore"]',
     communities: '[href$="/communities"],#TUICSidebar_communities',
     notifications: '[href*="/notifications"]',
-    messages: '[href^="/messages"]',
+    messages: '[href^="/messages"], #TUICSidebar_chat, [href="/i/chat"]',
     bookmarks: '[href="/i/bookmarks"],#TUICSidebar_bookmarks',
     profile: '[data-testid="AppTabBar_Profile_Link"]',
     moremenu: '[data-testid="AppTabBar_More_Menu"]',
@@ -36,6 +36,7 @@ export const SidebarButtonSelectors = {
     jobs: '[href="/jobs"],#TUICSidebar_jobs',
     spaces: "#TUICSidebar_spaces",
     grok: '[href="/i/grok"]',
+    //chat: `#TUICSidebar_chat, [href="/i/chat"]`,
 };
 
 const _data: Record<string, {
@@ -243,6 +244,16 @@ const _data: Record<string, {
         },
         url: "/i/spaces/start/",
     },
+    /*chat: {
+        html: () => {
+            return createSidebarButton("chat", () => <path d={SIDEBAR_BUTTON_ICON.chat.unselected}></path>);
+        },
+        onclick: (e: Event) => {
+            e?.preventDefault?.();
+            buttonClickInMoreMenu(`[href="/i/chat"]`);
+        },
+        url: "/i/chat",
+    },*/
 };
 
 function createSidebarButton(id: string, svg: () => JSX.Element): () => JSX.Element {

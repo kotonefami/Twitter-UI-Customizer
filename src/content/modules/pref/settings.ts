@@ -56,6 +56,7 @@ export const TUICSettings = {
         values: [
             { id: "likeToFavo", i18n: "bottomTweetButtons-setting-likeToFavo", default: false },
             { id: "bottomScroll", i18n: "bottomTweetButtons-setting-visibleScrollBar", default: false },
+            { id: "hideOnTimeline", i18n: "bottomTweetButtons-setting-hideOnTimeline", default: false },
         ],
     },
     "tweetDisplaySetting.buttonsInvisible": {
@@ -225,6 +226,7 @@ export const TUICSettings = {
             { id: "communities", i18n: "sidebarButtons-communities" },
             { id: "notifications", i18n: "sidebarButtons-notifications" },
             { id: "messages", i18n: "sidebarButtons-messages" },
+            // { id: "chat", i18n: "sidebarButtons-chat" },
             { id: "bookmarks", i18n: "sidebarButtons-bookmarks" },
             { id: "profile", i18n: "sidebarButtons-profile" },
             { id: "moremenu", i18n: "sidebarButtons-moremenu" },
@@ -240,7 +242,7 @@ export const TUICSettings = {
             { id: "settings", i18n: "sidebarButtons-settings" },
             { id: "spaces", i18n: "sidebarButton-moreMenuItems-spaces" },
             { id: "jobs", i18n: "sidebarButton-moreMenuItems-jobs" },
-            { id: "grok", i18n: "sidebarButtons-grok", default: false },
+            { id: "grok", i18n: "sidebarButtons-grok" },
         ],
     },
     "sidebarSetting.buttonConfig": {
@@ -279,6 +281,7 @@ export const TUICSettings = {
     "sidebarSetting.moreMenuItems": {
         type: "boolean",
         values: [
+            { id: "chat", i18n: "sidebarButtons-chat", default: false },
             { id: "lists", i18n: "sidebarButtons-lists", default: false },
             { id: "premium", i18n: "sidebarButton-moreMenuItems-premium", default: false },
             { id: "bookmarks", i18n: "sidebarButtons-bookmarks", default: false },
@@ -396,6 +399,7 @@ export const TUICSettings = {
         values: [
             { id: "hideDraft", i18n: "composetweet-hideDraft", default: false },
             { id: "remainOpened", i18n: "composetweet-remainOpened", default: false },
+            { id: "copyHashtag", i18n: "composetweet-copyHashtag", default: false },
         ],
     },
 
