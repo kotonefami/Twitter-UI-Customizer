@@ -291,6 +291,7 @@ export const TUICSettings = {
             { id: "monetization", i18n: "sidebarButton-moreMenuItems-monetization", default: false },
             //{ id: "pro", i18n: "sidebarButton-moreMenuItems-pro", default: false },
             { id: "verifiedOrgsSignup", i18n: "sidebarButton-moreMenuItems-verifiedOrgsSignup", default: false },
+            { id: "creatorStudio", i18n: "sidebarButton-moreMenuItems-creatorStudio", default: false },
             { id: "ads", i18n: "sidebarButton-moreMenuItems-ads", default: false },
             { id: "jobs", i18n: "sidebarButton-moreMenuItems-jobs", default: false },
             { id: "spaces", i18n: "sidebarButton-moreMenuItems-spaces", default: false },
