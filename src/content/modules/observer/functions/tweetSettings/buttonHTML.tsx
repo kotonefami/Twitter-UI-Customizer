@@ -183,7 +183,6 @@ export const tweetButtonData: Record<string, {
             );
         },
         clickEvent: async (data: ArticleInfomation) => {
-            console.log(data.elements.buttonBarBase.querySelector<HTMLButtonElement>(ButtonUnderTweetSelectors["share-button"]));
             data.elements.buttonBarBase.querySelector<HTMLButtonElement>(ButtonUnderTweetSelectors["share-button"]).closest("button").click();
             (
                 await waitForElement<HTMLButtonElement>(
