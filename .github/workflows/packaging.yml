@@ -11,6 +11,8 @@ permissions:
 jobs:
   create-branch:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v6
       - name: Create new Branch
@@ -116,13 +118,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ github.ref_name }}
-          name: Twitter UI Customizer ${{ github.ref_name }}
-          draft: false
-          prerelease: false
       - name: loadFile
         uses: actions/download-artifact@v6
         with:
@@ -136,10 +131,13 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: codeToDebug
-      - name: Upload Release Asset
-        id: upload-release-asset
+      - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.ref_name }}
+          name: Twitter UI Customizer ${{ github.ref_name }}
+          draft: false
+          prerelease: false
           files: |
             Twitter_UI_Customizer_Firefox.xpi
             Twitter_UI_Customizer_Chromium.zip
