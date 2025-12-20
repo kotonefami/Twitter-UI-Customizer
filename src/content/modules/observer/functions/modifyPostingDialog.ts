@@ -1,5 +1,7 @@
-import { hideElement, processElement } from "@modules/utils/controlElements";
+import { TUICI18N } from "@content/modules/i18n";
+import { hideElement, processElement, waitForElement } from "@modules/utils/controlElements";
 import { getPref, getSettingIDs } from "@modules/pref";
+import { placeToastMessage } from "@content/modules/utils/toastMessage";
 import { ProcessedClass } from "@shared/sharedData";
 
 const _data = {
@@ -15,7 +17,12 @@ const _data = {
     },
 };
 
-export async function sortPostingDialogButtons() {
+export function modifyPostingDialog() {
+    sortPostingDialogButtons();
+    composingTweetButton();
+}
+
+async function sortPostingDialogButtons() {
     if (document.querySelector(`[data-testid="toolBar"] input[data-testid="fileInput"]:not(.${ProcessedClass})`)) {
         const buttons: Record<string, HTMLElement> = {};
         const visibleButtons: string[] = getPref(`postingDialog.toolbar`);
@@ -43,6 +50,35 @@ export async function sortPostingDialogButtons() {
             if (elem) {
                 hideElement(elem.parentElement);
             }
+        }
+    }
+}
+
+
+function composingTweetButton() {
+    const composeTweetButtons = document.querySelectorAll<HTMLButtonElement>(`:is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]):not(.${ProcessedClass})`)
+    if (composeTweetButtons.length > 0) {
+        for(const composeTweetButton of composeTweetButtons){
+            composeTweetButton.addEventListener("click", () => {
+                if (composeTweetButton.disabled) return;
+                if (getPref("composetweet.copyHashtag")) {
+                    const hashs = [];
+                    const tweetTextElement = document.querySelector(`[data-testid="tweetTextarea_0"]`)
+                    for (const sentence of tweetTextElement.querySelectorAll(`span[data-text="true"]`)) {
+                        if (sentence?.textContent && (sentence.textContent.startsWith("#") || sentence.textContent.startsWith("$"))) hashs.push(sentence.textContent);
+                    }
+                    if (hashs.length > 0) {
+                        navigator.clipboard.writeText(hashs.join(" "));
+                        placeToastMessage(TUICI18N.get("bottomTweetButtons-urlCopy-layer"));
+                    }
+                }
+                if (location.pathname === "/compose/post" && composeTweetButton.dataset.testid === "tweetButton" && getPref("composetweet.remainOpened")) {
+                    waitForElement(`[data-testid="toast"]`).then(() => {
+                        window.setTimeout(() => document.querySelector<HTMLButtonElement>(`[data-testid="SideNav_NewTweet_Button"]`)?.click(), 500);
+                    });
+                }
+            });
+            processElement(composeTweetButton);
         }
     }
 }
