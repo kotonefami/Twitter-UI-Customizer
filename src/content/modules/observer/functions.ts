@@ -9,5 +9,6 @@ import { changeIcon } from "./functions/changeIcon";
 import { tweetSettings } from "./functions/tweetSettings";
 import { profileModify } from "./functions/profile";
 import { modifyPostingDialog } from "./functions/modifyPostingDialog";
+import { pinningTab } from "./functions/modifyTimelineTab";
 
-export { tweetSettings, hideOsusumeTweets, replacePost, hideElements, updateStyles, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, profileModify, modifyPostingDialog };
+export { tweetSettings, hideOsusumeTweets, replacePost, hideElements, updateStyles, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, profileModify, modifyPostingDialog, pinningTab };

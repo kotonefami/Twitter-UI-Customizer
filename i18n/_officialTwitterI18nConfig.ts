@@ -97,6 +97,12 @@ export const config: {
         //abfcce0d: [
         //    "{amountOfTime}",
         //],
+        d1e0a75f: [
+            "{noun}"
+        ],
+        dafd69e9: [
+            "{noun}"
+        ]
     },
 };
 

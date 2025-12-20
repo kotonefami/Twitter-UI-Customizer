@@ -1,4 +1,4 @@
-import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, modifyPostingDialog } from "./functions";
+import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, modifyPostingDialog, pinningTab } from "./functions";
 import { catchError } from "./errorDialog";
 import { placeDisplayButton } from "@content/modules/observer/functions/sidebarBtn/rightSidebarTexts";
 import { getPref } from "../pref/index";
@@ -100,6 +100,8 @@ export const TUICObserver = new (class TUICObserver {
             // プロフィール周りの処理
             profileModify();
 
+            // タイムラインのタブの固定
+            pinningTab();
 
             // 右サイドバーに「表示」を配置
             placeDisplayButton();
