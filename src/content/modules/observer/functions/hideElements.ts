@@ -16,10 +16,10 @@ export function hideElements() {
     osusumeUser();
 
     if (getPref("timeline.accountStart") && !location.search.includes("f=user") && !location.href.includes("/settings/") && document.querySelector(`[href="/settings/profile"]`)) {
-        const cells = document.querySelectorAll(`div[data-testid="cellInnerDiv"]:not([data-tuic-processed-article]):not([aria-labelledby="modal-header"] *):not([data-testid="primaryColumn"] > div > section *):not([data-testid="DMDrawer"] *):not([aria-live="polite"]+div *) [aria-live="polite"]`);
+        const cells = document.querySelectorAll<HTMLElement>(`div[data-testid="cellInnerDiv"]:not([data-tuic-processed-article]):not([aria-labelledby="modal-header"] *):not([data-testid="primaryColumn"] > div > section *):not([data-testid="DMDrawer"] *):not([aria-live="polite"]+div *):has([aria-live="polite"])`);
         for (const elem of cells) {
-            hideElement(elem.closest(`div[data-testid="cellInnerDiv"]`));
-            hideElement(elem.closest(`div[data-testid="cellInnerDiv"]`).previousElementSibling as HTMLElement);
+            hideElement(elem);
+            hideElement(elem.previousElementSibling as HTMLElement);
         }
     }
 
@@ -27,19 +27,6 @@ export function hideElements() {
         hideElement(document.querySelector(`*:not([data-tuic-hide="true"]) > [data-testid$="-subscribe"]`)?.parentElement);
     }
 
-    //「画像を編集」ボタンを非表示
-    if (getPref("tweetDisplaySetting.invisible.editImage")) {
-        const editImageElement = document.querySelector(`article [href^="/i/imagine?postId="]`)?.parentElement?.parentElement;
-        if (editImageElement) hideElement(editImageElement);
-    }
-
-    document.querySelectorAll<HTMLElement>('[href="/settings/monetization"], :not(nav[role="navigation"]) > [href^="/i/premium_sign_up"], [href="/settings/manage_subscriptions"]').forEach((e) => {
-        if (getPref("invisibleItems.config-premium")) {
-            hideElement(e);
-        } else {
-            showElement(e);
-        }
-    });
 
     if (location.pathname.includes("/notifications")) {
         if (getPref("invisibleItems.verifiedNotifications")) {

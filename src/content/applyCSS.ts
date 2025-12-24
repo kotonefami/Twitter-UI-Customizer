@@ -114,6 +114,7 @@ export function applySystemCss() {
         "rightSidebar.space",
         "rightSidebar.osusumeUser",
         "rightSidebar.relevantPeople",
+        "invisibleItems.config-premium",
     ];
     let settingsOutput = "|";
     for (const elem of settingsArr) {
