@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Přidat emoji",
     "postingDialog-toolbar-items-scheduleOption": "Naplánovat Tweet",
     "postingDialog-toolbar-items-geoButton": "Označit polohu",
-    "dateAndTime.options.absolutelyTime.ago": "Před "
+    "dateAndTime.options.absolutelyTime.ago": "Před ",
+    "timeline-pinningTab-foryou": "Pro vás",
+    "timeline-pinningTab-following": "Sledování",
+    "invisibleItems-editImage": "Upravit obrázek"
 }

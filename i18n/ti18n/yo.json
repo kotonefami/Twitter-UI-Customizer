@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Fi emoji kún",
     "postingDialog-toolbar-items-scheduleOption": "Pín Twíìtì Sípò",
     "postingDialog-toolbar-items-geoButton": "Táàgì ibùdó",
-    "dateAndTime.options.absolutelyTime.ago": "{0} sẹ́yìn"
+    "dateAndTime.options.absolutelyTime.ago": "{0} sẹ́yìn",
+    "timeline-pinningTab-foryou": "Fún ọ",
+    "timeline-pinningTab-following": "Ń tẹ̀lé",
+    "invisibleItems-editImage": "Edit image"
 }

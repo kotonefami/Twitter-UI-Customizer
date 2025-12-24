@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "எமோஜியைச் சேர்",
     "postingDialog-toolbar-items-scheduleOption": "ட்விட்டை திட்டமிடவும்",
     "postingDialog-toolbar-items-geoButton": "அமைவிடத்தை இணை",
-    "dateAndTime.options.absolutelyTime.ago": "{0} -க்கு முன்பு"
+    "dateAndTime.options.absolutelyTime.ago": "{0} -க்கு முன்பு",
+    "timeline-pinningTab-foryou": "உங்களுக்கானவை",
+    "timeline-pinningTab-following": "பின்தொடர்கிறீர்கள்",
+    "invisibleItems-editImage": "படத்தைத் திருத்து"
 }

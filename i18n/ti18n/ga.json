@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Cuir emoji leis",
     "postingDialog-toolbar-items-scheduleOption": "Sceidealaigh Tweet",
     "postingDialog-toolbar-items-geoButton": "Tag location",
-    "dateAndTime.options.absolutelyTime.ago": "{0} ó shin"
+    "dateAndTime.options.absolutelyTime.ago": "{0} ó shin",
+    "timeline-pinningTab-foryou": "For you",
+    "timeline-pinningTab-following": "Following",
+    "invisibleItems-editImage": "Edit image"
 }

@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Tambah emoji",
     "postingDialog-toolbar-items-scheduleOption": "Jadualkan Tweet",
     "postingDialog-toolbar-items-geoButton": "Teg lokasi",
-    "dateAndTime.options.absolutelyTime.ago": "{0} yang lalu"
+    "dateAndTime.options.absolutelyTime.ago": "{0} yang lalu",
+    "timeline-pinningTab-foryou": "Untuk anda",
+    "timeline-pinningTab-following": "Mengikuti",
+    "invisibleItems-editImage": "Edit imej"
 }

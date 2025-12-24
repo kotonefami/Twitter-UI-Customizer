@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Добавяне на емоджи",
     "postingDialog-toolbar-items-scheduleOption": "Насрочване на туит",
     "postingDialog-toolbar-items-geoButton": "Отбелязване на местоположението",
-    "dateAndTime.options.absolutelyTime.ago": "преди "
+    "dateAndTime.options.absolutelyTime.ago": "преди ",
+    "timeline-pinningTab-foryou": "За теб",
+    "timeline-pinningTab-following": "Следван(а)",
+    "invisibleItems-editImage": "Редактиране на изображение"
 }

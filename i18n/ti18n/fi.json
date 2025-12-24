@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Lisää emoji",
     "postingDialog-toolbar-items-scheduleOption": "Ajasta twiitti",
     "postingDialog-toolbar-items-geoButton": "Merkitse sijainti",
-    "dateAndTime.options.absolutelyTime.ago": "{0} sitten"
+    "dateAndTime.options.absolutelyTime.ago": "{0} sitten",
+    "timeline-pinningTab-foryou": "Sinulle",
+    "timeline-pinningTab-following": "Seurataan",
+    "invisibleItems-editImage": "Muokkaa kuvaa"
 }

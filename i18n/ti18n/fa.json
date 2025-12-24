@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "افزودن صورتک",
     "postingDialog-toolbar-items-scheduleOption": "زمان‌بندی توییت",
     "postingDialog-toolbar-items-geoButton": "برچسب زدن مکان",
-    "dateAndTime.options.absolutelyTime.ago": "{0} پیش"
+    "dateAndTime.options.absolutelyTime.ago": "{0} پیش",
+    "timeline-pinningTab-foryou": "برای شما",
+    "timeline-pinningTab-following": "دنبال‌شده",
+    "invisibleItems-editImage": "ویرایش تصویر"
 }

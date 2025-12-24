@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Ƙara imoji",
     "postingDialog-toolbar-items-scheduleOption": "Tweet da aka tsara lokaci",
     "postingDialog-toolbar-items-geoButton": "Sa alama a wuri",
-    "dateAndTime.options.absolutelyTime.ago": "{0} da ya wuce"
+    "dateAndTime.options.absolutelyTime.ago": "{0} da ya wuce",
+    "timeline-pinningTab-foryou": "Don kai",
+    "timeline-pinningTab-following": "Ana bin",
+    "invisibleItems-editImage": "Edit image"
 }

@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Adaugă emoji",
     "postingDialog-toolbar-items-scheduleOption": "Planifică Tweetul",
     "postingDialog-toolbar-items-geoButton": "Etichetează locația",
-    "dateAndTime.options.absolutelyTime.ago": "acum "
+    "dateAndTime.options.absolutelyTime.ago": "acum ",
+    "timeline-pinningTab-foryou": "Pentru tine",
+    "timeline-pinningTab-following": "Urmărești",
+    "invisibleItems-editImage": "Editează imaginea"
 }

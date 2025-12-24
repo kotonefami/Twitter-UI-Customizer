@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Emoji ekle",
     "postingDialog-toolbar-items-scheduleOption": "Tweet programla",
     "postingDialog-toolbar-items-geoButton": "Konumu etiketle",
-    "dateAndTime.options.absolutelyTime.ago": "{0} önce"
+    "dateAndTime.options.absolutelyTime.ago": "{0} önce",
+    "timeline-pinningTab-foryou": "Sana özel",
+    "timeline-pinningTab-following": "Takip edilenler",
+    "invisibleItems-editImage": "Resmi düzenle"
 }

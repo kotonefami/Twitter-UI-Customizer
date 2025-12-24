@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "הוסף אמוג'י",
     "postingDialog-toolbar-items-scheduleOption": "תזמן ציוץ",
     "postingDialog-toolbar-items-geoButton": "תייג מיקום",
-    "dateAndTime.options.absolutelyTime.ago": "לפני "
+    "dateAndTime.options.absolutelyTime.ago": "לפני ",
+    "timeline-pinningTab-foryou": "עבורך",
+    "timeline-pinningTab-following": "עוקב",
+    "invisibleItems-editImage": "עריכת תמונה"
 }

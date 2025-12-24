@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Thêm biểu tượng cảm xúc",
     "postingDialog-toolbar-items-scheduleOption": "Lên lịch Tweet",
     "postingDialog-toolbar-items-geoButton": "Gắn thẻ vị trí",
-    "dateAndTime.options.absolutelyTime.ago": "{0} trước"
+    "dateAndTime.options.absolutelyTime.ago": "{0} trước",
+    "timeline-pinningTab-foryou": "Dành cho bạn",
+    "timeline-pinningTab-following": "Đang theo dõi",
+    "invisibleItems-editImage": "Chỉnh sửa hình ảnh"
 }

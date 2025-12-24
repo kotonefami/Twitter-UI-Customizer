@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Add emoji",
     "postingDialog-toolbar-items-scheduleOption": "Schedule Tweet",
     "postingDialog-toolbar-items-geoButton": "Tag location",
-    "dateAndTime.options.absolutelyTime.ago": "{0} ago"
+    "dateAndTime.options.absolutelyTime.ago": "{0} ago",
+    "timeline-pinningTab-foryou": "For you",
+    "timeline-pinningTab-following": "Following",
+    "invisibleItems-editImage": "Edit image"
 }

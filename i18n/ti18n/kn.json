@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "ಎಮೋಜಿ ಸೇರಿಸಿ",
     "postingDialog-toolbar-items-scheduleOption": "ಟ್ವೀಟ್ ನಿಗದಿಪಡಿಸಿ",
     "postingDialog-toolbar-items-geoButton": "ಟ್ಯಾಗ್ ಸ್ಥಳ",
-    "dateAndTime.options.absolutelyTime.ago": "{0} ಹಿಂದೆ"
+    "dateAndTime.options.absolutelyTime.ago": "{0} ಹಿಂದೆ",
+    "timeline-pinningTab-foryou": "ನಿಮಗಾಗಿ",
+    "timeline-pinningTab-following": "ಹಿಂಬಾಲಿಸುವುದು",
+    "invisibleItems-editImage": "ಚಿತ್ರವನ್ನು ಸಂಪಾದಿಸಿ"
 }

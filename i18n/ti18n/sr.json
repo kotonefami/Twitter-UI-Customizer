@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Додај емотикон",
     "postingDialog-toolbar-items-scheduleOption": "Закажи твит",
     "postingDialog-toolbar-items-geoButton": "Означи локацију",
-    "dateAndTime.options.absolutelyTime.ago": "пре "
+    "dateAndTime.options.absolutelyTime.ago": "пре ",
+    "timeline-pinningTab-foryou": "За тебе",
+    "timeline-pinningTab-following": "Пратиш",
+    "invisibleItems-editImage": "Уреди слику"
 }

@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Legg til emoji",
     "postingDialog-toolbar-items-scheduleOption": "Planlegg en Tweet",
     "postingDialog-toolbar-items-geoButton": "Tagg posisjon",
-    "dateAndTime.options.absolutelyTime.ago": "For {0} siden"
+    "dateAndTime.options.absolutelyTime.ago": "For {0} siden",
+    "timeline-pinningTab-foryou": "For deg",
+    "timeline-pinningTab-following": "Følger",
+    "invisibleItems-editImage": "Bilderedigering"
 }

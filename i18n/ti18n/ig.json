@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Tinye emoji",
     "postingDialog-toolbar-items-scheduleOption": "Hazieoge Twiit",
     "postingDialog-toolbar-items-geoButton": "Tinye ọnọdụ",
-    "dateAndTime.options.absolutelyTime.ago": "{0} gara aga"
+    "dateAndTime.options.absolutelyTime.ago": "{0} gara aga",
+    "timeline-pinningTab-foryou": "Maka gi",
+    "timeline-pinningTab-following": "Na-eso",
+    "invisibleItems-editImage": "Edit image"
 }

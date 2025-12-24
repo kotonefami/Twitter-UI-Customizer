@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "إضافة رمز تعبيري",
     "postingDialog-toolbar-items-scheduleOption": "جدولة التغريدة",
     "postingDialog-toolbar-items-geoButton": "الإشارة إلى الموقع الجغرافيّ",
-    "dateAndTime.options.absolutelyTime.ago": "منذ "
+    "dateAndTime.options.absolutelyTime.ago": "منذ ",
+    "timeline-pinningTab-foryou": "لك",
+    "timeline-pinningTab-following": "متابَعون",
+    "invisibleItems-editImage": "تعديل الصورة"
 }

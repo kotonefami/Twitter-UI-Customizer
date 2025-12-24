@@ -148,5 +148,8 @@
     "postingDialog-toolbar-items-addEmoji": "Додати емодзі",
     "postingDialog-toolbar-items-scheduleOption": "Запланувати твіт",
     "postingDialog-toolbar-items-geoButton": "Позначити місцезнаходження",
-    "dateAndTime.options.absolutelyTime.ago": "{0} тому"
+    "dateAndTime.options.absolutelyTime.ago": "{0} тому",
+    "timeline-pinningTab-foryou": "Для вас",
+    "timeline-pinningTab-following": "Стрічка підписок",
+    "invisibleItems-editImage": "Редагувати зображення"
 }
