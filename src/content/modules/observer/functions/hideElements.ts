@@ -1,4 +1,4 @@
-import { hideElement, showElement, hasClosest } from "@modules/utils/controlElements";
+import { hideElement, showElement } from "@modules/utils/controlElements";
 import { getPref } from "@modules/pref";
 import { getAbsolutelyTime, isRelativeTime } from "@content/modules/utils/dateAndTime";
 
@@ -12,7 +12,6 @@ export function hideElements() {
         }
     });*/
 
-    rightSidebar();
     profile();
     osusumeUser();
 
@@ -33,10 +32,6 @@ export function hideElements() {
         const editImageElement = document.querySelector(`article [href^="/i/imagine?postId="]`)?.parentElement?.parentElement;
         if (editImageElement) hideElement(editImageElement);
     }
-
-    // if (getPref("accountSwitcher.icon") && getPref("accountSwitcher.nameID") && getPref("accountSwitcher.moreMenu")) {
-    //     hideElement(hasClosest(document.querySelector(`:not([data-tuic-hide="true"]) > * > [data-testid="SideNav_AccountSwitcher_Button"]`), `:scope > * > [data-testid="SideNav_AccountSwitcher_Button"]`));
-    // }
 
     document.querySelectorAll<HTMLElement>('[href="/settings/monetization"], :not(nav[role="navigation"]) > [href^="/i/premium_sign_up"], [href="/settings/manage_subscriptions"]').forEach((e) => {
         if (getPref("invisibleItems.config-premium")) {
@@ -64,34 +59,6 @@ export function hideElements() {
                 hideElement(elem.closest("div+div"));
             }
         }
-    }
-}
-
-function rightSidebar() {
-    if (getPref("rightSidebar.verified")) {
-        hideElement(hasClosest(document.querySelector(`*:not([data-tuic-hide="true"]) > div > :is([data-testid="super-upsell-UpsellCardRenderProperties"], aside[role="complementary"]) :is([href="/i/verified-choose"], [href="/i/premium_tier_switch"], [href="/i/premium_sign_up"])`), `:is([data-testid="super-upsell-UpsellCardRenderProperties"], [role="complementary"])`)?.closest(`div+div`));
-    }
-    if (getPref("rightSidebar.trend")) {
-        hideElement(hasClosest(document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [data-testid="trend"]`), ":scope >  section"));
-    }
-    if (getPref("rightSidebar.news")) {
-        hideElement(document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [data-testid="news_sidebar"]`)?.parentElement);
-    }
-    if (getPref("rightSidebar.osusumeUser") && document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [data-testid="UserCell"] [dir="auto"] > span:not([role="search"] *)`) == null) {
-        hideElement(hasClosest(document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [data-testid="UserCell"]:not([role="search"] *)`), ":scope > * > aside"));
-    }
-
-    if (getPref("rightSidebar.relevantPeople") && document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [data-testid="UserCell"] [dir="auto"] > span`)) {
-        hideElement(hasClosest(document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [data-testid="UserCell"]`), `:scope > * > * > [data-testid="UserCell"]`));
-    }
-    if (getPref("rightSidebar.links")) {
-        hideElement(document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) > nav`)?.parentElement);
-    }
-    if (getPref("rightSidebar.searchBox")) {
-        hideElement(hasClosest(document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [role="search"]`), `:scope > * > * > * > [role="search"]`));
-    }
-    if (getPref("rightSidebar.space")) {
-        hideElement(document.querySelector(`[data-testid="sidebarColumn"] *:not([data-tuic-hide="true"]) [data-testid="pill-contents-container"]`)?.closest(`[data-testid="placementTracking"]`).parentElement);
     }
 }
 

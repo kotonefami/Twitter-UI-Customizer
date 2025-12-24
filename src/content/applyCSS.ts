@@ -106,6 +106,14 @@ export function applySystemCss() {
         "sidebarSetting.hideBadge.notificationsBadge",
         "sidebarSetting.hideBadge.dmBadge",
         "tweetDisplaySetting.invisible.editImage",
+        "rightSidebar.verified",
+        "rightSidebar.trend",
+        "rightSidebar.news",
+        "rightSidebar.links",
+        "rightSidebar.searchBox",
+        "rightSidebar.space",
+        "rightSidebar.osusumeUser",
+        "rightSidebar.relevantPeople",
     ];
     let settingsOutput = "|";
     for (const elem of settingsArr) {
