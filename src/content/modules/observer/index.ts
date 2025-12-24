@@ -1,4 +1,4 @@
-import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, sortPostingDialogButtons, composetweet } from "./functions";
+import { tweetSettings, hideOsusumeTweets, replacePost, updateStyles, profileModify, sidebarButtons, dmPage, fixTwittersBugs, changeIcon, hideElements, modifyPostingDialog, pinningTab } from "./functions";
 import { catchError } from "./errorDialog";
 import { placeDisplayButton } from "@content/modules/observer/functions/sidebarBtn/rightSidebarTexts";
 import { getPref } from "../pref/index";
@@ -100,8 +100,8 @@ export const TUICObserver = new (class TUICObserver {
             // プロフィール周りの処理
             profileModify();
 
-            // ツイート画面下部のツールバーを並び替え
-            sortPostingDialogButtons();
+            // タイムラインのタブの固定
+            pinningTab();
 
             // 右サイドバーに「表示」を配置
             placeDisplayButton();
@@ -109,8 +109,8 @@ export const TUICObserver = new (class TUICObserver {
             // Twitterのバグを修正(現在はDMに関するもののみ)
             fixTwittersBugs();
 
-            // ツイート画面関係の設定
-            composetweet();
+            // ツイート画面関係の変更
+            modifyPostingDialog();
 
             //throw new Error("エラー時のダイアログのテスト用です。");
 

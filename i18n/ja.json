@@ -165,6 +165,13 @@
     "timeline-discoverMore-detailOpen": "折りたたみ可能にし、デフォルトは開く",
     "timeline-discoverMore-detailClose": "折りたたみ可能にし、デフォルトは閉じる",
     "timeline-discoverMore-invisible": "非表示にする",
+    "timeline-pinningTab": "タイムラインのタブの固定",
+    "timeline-pinningTab-list1": "リスト等 (1番目)",
+    "timeline-pinningTab-list2": "リスト等 (2番目)",
+    "timeline-pinningTab-list3": "リスト等 (3番目)",
+    "timeline-pinningTab-list4": "リスト等 (4番目)",
+    "timeline-pinningTab-list5": "リスト等 (5番目)",
+    "timeline-pinningTab-none": "タブを固定しない",
     "customCSS-settingTitle": "カスタムCSS",
     "customCSS-save": "カスタムCSSを保存",
 

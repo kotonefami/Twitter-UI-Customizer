@@ -108,6 +108,20 @@ export const TUICSettings = {
             { id: "discoverMore_invisible", i18n: "timeline-discoverMore-invisible" },
         ],
     },
+    "timeline.pinningTab": {
+        type: "select",
+        default: "none",
+        values: [
+            { id: "foryou", i18n: "timeline-pinningTab-foryou" },
+            { id: "following", i18n: "timeline-pinningTab-following" },
+            { id: "list1", i18n: "timeline-pinningTab-list1" },
+            { id: "list2", i18n: "timeline-pinningTab-list2" },
+            { id: "list3", i18n: "timeline-pinningTab-list3" },
+            { id: "list4", i18n: "timeline-pinningTab-list4" },
+            { id: "list5", i18n: "timeline-pinningTab-list5" },
+            { id: "none", i18n: "timeline-pinningTab-none" },
+        ]
+    },
     fixEngagements: {
         type: "order",
         default: ["likes", "retweets", "quotes"],
