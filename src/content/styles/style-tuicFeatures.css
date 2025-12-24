@@ -236,3 +236,7 @@
 :root[data-tuic-settings*="|invisibleItems.hideBelowGrok|"] [data-testid="GrokDrawer"] {
     display: none !important;
 }
+
+:root[data-tuic-settings*="|tweetdisplaysetting.invisible.editimage|"] article [href^="/i/imagine?postId="] {
+    display: none !important;
+}

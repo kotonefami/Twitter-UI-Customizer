@@ -105,6 +105,7 @@ export function applySystemCss() {
         "sidebarSetting.hideBadge.homeBadge",
         "sidebarSetting.hideBadge.notificationsBadge",
         "sidebarSetting.hideBadge.dmBadge",
+        "tweetDisplaySetting.invisible.editImage",
     ];
     let settingsOutput = "|";
     for (const elem of settingsArr) {
