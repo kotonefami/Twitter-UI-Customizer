@@ -115,6 +115,10 @@ export function applySystemCss() {
         "rightSidebar.osusumeUser",
         "rightSidebar.relevantPeople",
         "invisibleItems.config-premium",
+        "profileSetting.invisible.subscribe-profile",
+        "profileSetting.invisible.profileHighlights",
+        "profileSetting.invisible.profileArticles",
+        "profileSetting.invisible.profileSummary",
     ];
     let settingsOutput = "|";
     for (const elem of settingsArr) {

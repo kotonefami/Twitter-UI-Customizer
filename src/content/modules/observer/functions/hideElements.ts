@@ -1,7 +1,8 @@
-import { hideElement, showElement } from "@modules/utils/controlElements";
+import { hideElement } from "@modules/utils/controlElements";
 import { getPref } from "@modules/pref";
 import { getAbsolutelyTime, isRelativeTime } from "@content/modules/utils/dateAndTime";
 
+// URLなどによる条件分岐が必要だが、一つのファイルとして分離するほどではないものがここには集まっています。
 // NOTE: 条件分岐とClass付与を一行にまとめる場合は、.? をつけるのを忘れないようにしましょう
 export function hideElements() {
     /*document.querySelectorAll<HTMLElement>('a[href$="quick_promote_web/intro"]').forEach((e) => {
@@ -27,7 +28,6 @@ export function hideElements() {
         hideElement(document.querySelector(`*:not([data-tuic-hide="true"]) > [data-testid$="-subscribe"]`)?.parentElement);
     }
 
-
     if (location.pathname.includes("/notifications")) {
         if (getPref("invisibleItems.verifiedNotifications")) {
             hideElement(document.querySelector(`[href="/notifications/verified"][role="tab"]:not([data-tuic-hide="true"] > *)`)?.parentElement);
@@ -50,38 +50,6 @@ export function hideElements() {
 }
 
 function profile() {
-    if (getPref("profileSetting.invisible.subscribe-profile")) {
-        hideElement(document.querySelector(`[data-testid="userActions"]+[style*="border-color"][style*="rgb(201, 54, 204)"]:not([data-tuic-hide="true"])`));
-    }
-
-    if (getPref("profileSetting.invisible.profileHighlights")) {
-        const tabs = document.querySelectorAll(`:not([data-tuic-hide="true"]) > [role="tab"][href$="/highlights"]`);
-        for (const elem of tabs) {
-            hideElement(elem.parentElement);
-        }
-    }
-
-    if (getPref("profileSetting.invisible.profileArticles")) {
-        const tabs = document.querySelectorAll(`:not([data-tuic-hide="true"]) > [role="tab"][href$="/articles"]`);
-        for (const elem of tabs) {
-            hideElement(elem.parentElement);
-        }
-    }
-
-    if (getPref("profileSetting.invisible.profileAffiliates")) {
-        const tabs = document.querySelectorAll(`:not([data-tuic-hide="true"]) > [role="tab"][href$="/affiliates"]`);
-        for (const elem of tabs) {
-            hideElement(elem.parentElement);
-        }
-    }
-
-    if (getPref("profileSetting.invisible.profilePagePremium")) {
-        const tabs = document.querySelectorAll(`[data-testid="primaryColumn"] :not([data-tuic-hide="true"]) > * [role="link"][href="/i/premium_sign_up"]`);
-        for (const elem of tabs) {
-            hideElement(elem.parentElement.parentElement);
-        }
-    }
-
     if (getPref("profileSetting.invisible.verifiedFollowerTab")) {
         const nowURL = location.pathname;
         if (nowURL.endsWith("/followers") || nowURL.endsWith("/following") || nowURL.endsWith("/followers_you_follow") || nowURL.endsWith("/verified_followers")) {
@@ -113,10 +81,6 @@ function profile() {
                 scrollSnapElem.parentElement.dataset.tuicHideChildScrollSnap = "";
             }
         }
-    }
-
-    if (getPref("profileSetting.invisible.profileSummary")) {
-        hideElement(document.querySelector<HTMLElement>(`[data-testid^="UserAvatar-Container-"]+div button path[d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"]`)?.closest("button"));
     }
 }
 
