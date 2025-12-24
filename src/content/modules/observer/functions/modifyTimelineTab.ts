@@ -22,27 +22,18 @@ export function pinningTab() {
     }
 }
 
-function getTabSelector(nth: number) {
-    return `:is([data-testid="TopNavBar"], [data-testid="primaryColumn"]) [role="navigation"] [data-testid="ScrollSnap-SwipeableList"] [data-testid="ScrollSnap-List"] > div[role="presentation"]:nth-child(${nth}) > [role="tab"]`
-}
-
-const orderOfTab = ["foryou", "following"];
+const orderOfTab = ["foryou", "following", "list1", "list2", "list3", "list4", "list5"];
 
 // まだタブ固定処理をしていないアカウントのみ動かす
 function clickTab(userID: string): boolean {
     if (pinnedTab.includes(userID)) return;
     const prefValue = getPref("timeline.pinningTab");
-    switch (prefValue) {
-        case "following":
-        case "foryou": {
-            const tabElement = document.querySelector<HTMLButtonElement>(getTabSelector(orderOfTab.indexOf(prefValue) + 1))
-            if (tabElement){
-                tabElement.click?.()
-                pinnedTab.push(userID);
-            }
-            break;
-        }
-        default: break;
+    if (!orderOfTab.includes(prefValue)) return;
+    const tabElement = document.querySelector<HTMLButtonElement>(
+        `:is([data-testid="TopNavBar"], [data-testid="primaryColumn"]) [role="navigation"] [data-testid="ScrollSnap-SwipeableList"] [data-testid="ScrollSnap-List"] > div[role="presentation"]:nth-child(${orderOfTab.indexOf(prefValue) + 1}) > [role="tab"]`
+    )
+    if (tabElement) {
+        tabElement.click?.()
+        pinnedTab.push(userID);
     }
-
 }
