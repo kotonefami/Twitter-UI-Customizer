@@ -1,6 +1,6 @@
 import type { JSX } from "solid-js";
 import { render } from "solid-js/web";
-import { waitForElement, hideElement, showElement, processElement, hasClosest } from "@modules/utils/controlElements";
+import { waitForElement, hideElement, showElement, processElement } from "@modules/utils/controlElements";
 import { getPref, getSettingIDs } from "@modules/pref";
 import { tweetMoreMenuContent } from "./tweetMoreMenuContent";
 import { ProcessedClass } from "@shared/sharedData";
