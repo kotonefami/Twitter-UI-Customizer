@@ -34,9 +34,9 @@ export function hideElements() {
         if (editImageElement) hideElement(editImageElement);
     }
 
-    if (getPref("accountSwitcher.icon") && getPref("accountSwitcher.nameID") && getPref("accountSwitcher.moreMenu")) {
-        hideElement(hasClosest(document.querySelector(`:not([data-tuic-hide="true"]) > * > [data-testid="SideNav_AccountSwitcher_Button"]`), `:scope > * > [data-testid="SideNav_AccountSwitcher_Button"]`));
-    }
+    // if (getPref("accountSwitcher.icon") && getPref("accountSwitcher.nameID") && getPref("accountSwitcher.moreMenu")) {
+    //     hideElement(hasClosest(document.querySelector(`:not([data-tuic-hide="true"]) > * > [data-testid="SideNav_AccountSwitcher_Button"]`), `:scope > * > [data-testid="SideNav_AccountSwitcher_Button"]`));
+    // }
 
     document.querySelectorAll<HTMLElement>('[href="/settings/monetization"], :not(nav[role="navigation"]) > [href^="/i/premium_sign_up"], [href="/settings/manage_subscriptions"]').forEach((e) => {
         if (getPref("invisibleItems.config-premium")) {

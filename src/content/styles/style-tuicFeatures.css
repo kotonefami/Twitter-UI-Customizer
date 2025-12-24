@@ -155,13 +155,43 @@
 }
 
 :is(
-    :root[data-tuic-settings*="|invisibleItems.subscribe-profile|"] [data-testid="userActions"] + [style*="border-color"][style*="rgb(201, 54, 204)"],
-    :root[data-tuic-settings*="|invisibleItems.hideBelowDM|"] :is([data-testid="DMDrawer"], [data-testid="chat-drawer-root"]),
-    :root[data-tuic-settings*="|tweetDisplaySetting.option.noNumberBottomTweetButtons|"] [data-tuic-zooming-tweet] [data-testid="app-text-transition-container"],
-    :root[data-tuic-settings*="|accountSwitcher.icon|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child,
-    :root[data-tuic-settings*="|accountSwitcher.nameID|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div,
-    :root[data-tuic-settings*="|accountSwitcher.moreMenu|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div + div,
-    :root[data-tuic-settings*="|composetweet.hideDraft|"] [data-testid="unsentButton"],
+    /* プロフィールのサブスクリプションボタン */
+    :root[data-tuic-settings*="|invisibleItems.subscribe-profile|"]
+        [data-testid="userActions"] + [style*="border-color"][style*="rgb(201, 54, 204)"],
+    /* 画面右下のDMドロワー */
+    :root[data-tuic-settings*="|invisibleItems.hideBelowDM|"]
+        :is([data-testid="DMDrawer"], [data-testid="chat-drawer-root"]),
+    /* ツイート下ボタン横の数字 */
+    :root[data-tuic-settings*="|tweetDisplaySetting.option.noNumberBottomTweetButtons|"]
+        [data-tuic-zooming-tweet] [data-testid="app-text-transition-container"],
+    /* 左下のアカウント切り替えの各要素 */
+    :root[data-tuic-settings*="|accountSwitcher.icon|"]
+        [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child,
+    :root[data-tuic-settings*="|accountSwitcher.nameID|"]
+        [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div,
+    :root[data-tuic-settings*="|accountSwitcher.moreMenu|"]
+        [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div + div,
+    :root[data-tuic-settings*="|accountSwitcher.icon|"][data-tuic-settings*="|accountSwitcher.nameID|"][data-tuic-settings*="|accountSwitcher.moreMenu|"] 
+        :has( > * > [data-testid="SideNav_AccountSwitcher_Button"]),
+    /* ツイート投稿画面の下書きボタン */
+    :root[data-tuic-settings*="|composetweet.hideDraft|"]
+        [data-testid="unsentButton"],
+    /* サイドバーのボタンをCSSでも消しにかかる (なんで...？) */
+    :root[data-tuic-settings*="|sidebarButtons.style.verifiedChoose|"]
+        [role="banner"] > div > div > div > div > div > nav [href="/i/premium_sign_up"],
+    /* サイドバーのバッジ */
+    :root[data-tuic-settings*="|sidebarSetting.hideBadge.homeBadge|"]
+        [data-testid="AppTabBar_Home_Link"] svg + div,
+    :root[data-tuic-settings*="|sidebarSetting.hideBadge.notificationsBadge|"]
+        [data-testid="AppTabBar_Notifications_Link"] svg + div,
+    :root[data-tuic-settings*="|sidebarSetting.hideBadge.dmBadge|"]
+        [data-testid="AppTabBar_DirectMessage_Link"] svg + div,
+    /* 画面右下のGrokボタン */
+    :root[data-tuic-settings*="|invisibleItems.hideBelowGrok|"]
+        [data-testid="GrokDrawer"],
+    /* ツイートの画像右下の画像を編集ボタン */
+    :root[data-tuic-settings*="|tweetdisplaysetting.invisible.editimage|"]
+        article [href^="/i/imagine?postId="],
 
 ) {
     display: none !important;
@@ -215,28 +245,4 @@
 
 :root[data-tuic-settings*="|tweetDisplaySetting.option.likeToFavo|"] [data-testid="like"] > div:is(:hover, :focus-visible) path {
     fill: rgb(255 212 0) !important;
-}
-
-:root[data-tuic-settings*="|sidebarButtons.style.verifiedChoose|"] [role="banner"] > div > div > div > div > div > nav [href="/i/premium_sign_up"] {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|sidebarSetting.hideBadge.homeBadge|"] [data-testid="AppTabBar_Home_Link"] svg + div {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|sidebarSetting.hideBadge.notificationsBadge|"] [data-testid="AppTabBar_Notifications_Link"] svg + div {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|sidebarSetting.hideBadge.dmBadge|"] [data-testid="AppTabBar_DirectMessage_Link"] svg + div {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|invisibleItems.hideBelowGrok|"] [data-testid="GrokDrawer"] {
-    display: none !important;
-}
-
-:root[data-tuic-settings*="|tweetdisplaysetting.invisible.editimage|"] article [href^="/i/imagine?postId="] {
-    display: none !important;
 }
