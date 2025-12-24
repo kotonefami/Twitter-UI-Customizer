@@ -99,11 +99,11 @@ export const config: {
         //    "{amountOfTime}",
         //],
         d1e0a75f: [
-            "{noun}"
+            "{noun}",
         ],
         dafd69e9: [
-            "{noun}"
-        ]
+            "{noun}",
+        ],
     },
 };
 

@@ -6,7 +6,7 @@ let pinnedTab: string[] = [];
 let prefCache = "";
 
 export function pinningTab() {
-    const prefValue = getPref("timeline.pinningTab")
+    const prefValue = getPref("timeline.pinningTab");
     if (location.pathname !== "/home" || prefValue === "none") return;
     if (prefCache !== prefValue) {
         prefCache = prefValue;
@@ -22,7 +22,7 @@ export function pinningTab() {
     {
         const userIcon = document.querySelector<HTMLElement>(`header [data-testid="SideNav_AccountSwitcher_Button"] [data-testid^="UserAvatar-Container-"]`);
         if (userIcon) {
-            clickTab(userIcon.dataset.testid)
+            clickTab(userIcon.dataset.testid);
             return;
         }
     }
@@ -36,10 +36,10 @@ function clickTab(userID: string): boolean {
     const prefValue = getPref("timeline.pinningTab");
     if (!orderOfTab.includes(prefValue)) return;
     const tabElement = document.querySelector<HTMLButtonElement>(
-        `:is([data-testid="TopNavBar"], [data-testid="primaryColumn"]) [role="navigation"] [data-testid="ScrollSnap-SwipeableList"] [data-testid="ScrollSnap-List"] > div[role="presentation"]:nth-child(${orderOfTab.indexOf(prefValue) + 1}) > [role="tab"]`
-    )
+        `:is([data-testid="TopNavBar"], [data-testid="primaryColumn"]) [role="navigation"] [data-testid="ScrollSnap-SwipeableList"] [data-testid="ScrollSnap-List"] > div[role="presentation"]:nth-child(${orderOfTab.indexOf(prefValue) + 1}) > [role="tab"]`,
+    );
     if (tabElement) {
-        tabElement.click?.()
+        tabElement.click?.();
         pinnedTab.push(userID);
     }
 }

@@ -54,16 +54,15 @@ async function sortPostingDialogButtons() {
     }
 }
 
-
 function composingTweetButton() {
-    const composeTweetButtons = document.querySelectorAll<HTMLButtonElement>(`:is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]):not(.${ProcessedClass})`)
+    const composeTweetButtons = document.querySelectorAll<HTMLButtonElement>(`:is([data-testid="tweetButton"], [data-testid="tweetButtonInline"]):not(.${ProcessedClass})`);
     if (composeTweetButtons.length > 0) {
-        for(const composeTweetButton of composeTweetButtons){
+        for (const composeTweetButton of composeTweetButtons) {
             composeTweetButton.addEventListener("click", () => {
                 if (composeTweetButton.disabled) return;
                 if (getPref("composetweet.copyHashtag")) {
                     const hashs = [];
-                    const tweetTextElement = document.querySelector(`[data-testid="tweetTextarea_0"]`)
+                    const tweetTextElement = document.querySelector(`[data-testid="tweetTextarea_0"]`);
                     for (const sentence of tweetTextElement.querySelectorAll(`span[data-text="true"]`)) {
                         if (sentence?.textContent && (sentence.textContent.startsWith("#") || sentence.textContent.startsWith("$"))) hashs.push(sentence.textContent);
                     }
