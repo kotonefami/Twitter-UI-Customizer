@@ -150,5 +150,6 @@
     "postingDialog-toolbar-items-geoButton": "Tag location",
     "dateAndTime.options.absolutelyTime.ago": "{0} ago",
     "timeline-pinningTab-foryou": "For you",
-    "timeline-pinningTab-following": "Following"
+    "timeline-pinningTab-following": "Following",
+    "invisibleItems-editImage": "Edit image"
 }

@@ -150,5 +150,6 @@
     "postingDialog-toolbar-items-geoButton": "位置情報を追加",
     "dateAndTime.options.absolutelyTime.ago": "{0}前",
     "timeline-pinningTab-foryou": "おすすめ",
-    "timeline-pinningTab-following": "フォロー中"
+    "timeline-pinningTab-following": "フォロー中",
+    "invisibleItems-editImage": "画像を編集"
 }

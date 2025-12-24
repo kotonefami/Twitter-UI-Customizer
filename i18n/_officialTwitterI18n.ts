@@ -159,7 +159,8 @@ export const TUICI18ns: Record<TUICI18nKey, TranslateKey> = {
     "postingDialog-toolbar-items-geoButton": "cce30dcc",
     "dateAndTime.options.absolutelyTime.ago": "f0e84609",
     "timeline-pinningTab-foryou": "d1e0a75f",
-    "timeline-pinningTab-following": "dafd69e9"
+    "timeline-pinningTab-following": "dafd69e9",
+    "invisibleItems-editImage": "fd45fe70",
 };
 
 export default TUICI18ns;

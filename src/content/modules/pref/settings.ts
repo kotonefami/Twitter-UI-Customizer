@@ -120,7 +120,7 @@ export const TUICSettings = {
             { id: "list4", i18n: "timeline-pinningTab-list4" },
             { id: "list5", i18n: "timeline-pinningTab-list5" },
             { id: "none", i18n: "timeline-pinningTab-none" },
-        ]
+        ],
     },
     fixEngagements: {
         type: "order",
@@ -192,6 +192,7 @@ export const TUICSettings = {
             //{ id: "twitter-pro-promotion-btn", i18n: "invisibleItems-twitterProPromotionBtn", default: false },
             { id: "subscribe-tweets", i18n: "invisibleItems-subscribeTweets", default: false },
             { id: "askGrok", i18n: "bottomTweetButtons-setting-askGrok", default: false },
+            { id: "editImage", i18n: "invisibleItems-editImage", default: false },
         ],
     },
     "postingDialog.toolbar": {

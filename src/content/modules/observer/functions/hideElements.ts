@@ -28,6 +28,12 @@ export function hideElements() {
         hideElement(document.querySelector(`*:not([data-tuic-hide="true"]) > [data-testid$="-subscribe"]`)?.parentElement);
     }
 
+    //「画像を編集」ボタンを非表示
+    if (getPref("tweetDisplaySetting.invisible.editImage")) {
+        const editImageElement = document.querySelector(`article [href^="/i/imagine?postId="]`)?.parentElement?.parentElement;
+        if (editImageElement) hideElement(editImageElement);
+    }
+
     if (getPref("accountSwitcher.icon") && getPref("accountSwitcher.nameID") && getPref("accountSwitcher.moreMenu")) {
         hideElement(hasClosest(document.querySelector(`:not([data-tuic-hide="true"]) > * > [data-testid="SideNav_AccountSwitcher_Button"]`), `:scope > * > [data-testid="SideNav_AccountSwitcher_Button"]`));
     }
