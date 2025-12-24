@@ -2,10 +2,16 @@ import { getPref } from "@content/modules/pref";
 
 // PC版の場合ユーザーID、スマホ版の場合アカウント切り替えボタンのaria-labelを格納
 // (Delegate機能に対応するため)
-const pinnedTab: string[] = [];
+let pinnedTab: string[] = [];
+let prefCache = "";
 
 export function pinningTab() {
-    if (location.pathname !== "/home" || getPref("timeline.pinningTab") === "none") return;
+    const prefValue = getPref("timeline.pinningTab")
+    if (location.pathname !== "/home" || prefValue === "none") return;
+    if (prefCache !== prefValue) {
+        prefCache = prefValue;
+        pinnedTab = [];
+    }
     {
         const userIcon = document.querySelector(`[data-testid="DashButton_ProfileIcon_Link"]`);
         if (userIcon) {
