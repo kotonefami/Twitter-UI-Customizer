@@ -163,8 +163,7 @@
     overflow: clip;
 }
 
-/* :root[data-tuic-settings*="|profileSetting.tabs.pinnedTab|"] [data-testid="primaryColumn"] > div > div > div > div > nav[role="navigation"] { */
-[data-tuic-tabs-pinned] {
+:root[data-tuic-settings*="|profileSetting.tabs.pinnedTab|"] [data-testid="primaryColumn"] > div > div > div > div > div:has(> nav[role="navigation"]) {
     position: sticky;
     top: var(--TUIC-pinnedTab-top);
     z-index: 1;
