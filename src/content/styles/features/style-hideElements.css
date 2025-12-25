@@ -17,7 +17,7 @@
 :root[data-tuic-settings*="|accountSwitcher.icon|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child,
 :root[data-tuic-settings*="|accountSwitcher.nameID|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div,
 :root[data-tuic-settings*="|accountSwitcher.moreMenu|"] [data-testid="SideNav_AccountSwitcher_Button"] > div:first-child + div + div,
-:root[data-tuic-settings*="|accountSwitcher.icon|"][data-tuic-settings*="|accountSwitcher.nameID|"][data-tuic-settings*="|accountSwitcher.moreMenu|"] :has(> * > [data-testid="SideNav_AccountSwitcher_Button"]) {
+:root[data-tuic-settings*="|accountSwitcher.icon|"][data-tuic-settings*="|accountSwitcher.nameID|"][data-tuic-settings*="|accountSwitcher.moreMenu|"] div:has(> div > [data-testid="SideNav_AccountSwitcher_Button"]) {
     display: none !important;
 }
 
@@ -44,19 +44,19 @@
 }
 
 /* ツイートの画像右下の画像を編集ボタン */
-:root[data-tuic-settings*="|tweetDisplaySetting.invisible.editImage|"] article :has(> * > [href^="/i/imagine?postId="]) {
+:root[data-tuic-settings*="|tweetDisplaySetting.invisible.editImage|"] article div:has(> div > [href^="/i/imagine?postId="]) {
     display: none !important;
 }
 
 /* 右サイドバー */
 :root[data-tuic-settings*="|rightSidebar.verified|"] div + div:has(> div > :is([data-testid="super-upsell-UpsellCardRenderProperties"], aside[role="complementary"]) :is([href="/i/verified-choose"], [href="/i/premium_tier_switch"], [href="/i/premium_sign_up"])),
-:root[data-tuic-settings*="|rightSidebar.trend|"] [data-testid="sidebarColumn"] :has(> section [data-testid="trend"]),
-:root[data-tuic-settings*="|rightSidebar.news|"] [data-testid="sidebarColumn"] :has(> [data-testid="news_sidebar"]),
+:root[data-tuic-settings*="|rightSidebar.trend|"] [data-testid="sidebarColumn"] div:has(> section [data-testid="trend"]),
+:root[data-tuic-settings*="|rightSidebar.news|"] [data-testid="sidebarColumn"] div:has(> [data-testid="news_sidebar"]),
 :root[data-tuic-settings*="|rightSidebar.links|"] [data-testid="sidebarColumn"] :has(> nav),
-:root[data-tuic-settings*="|rightSidebar.searchBox|"] [data-testid="sidebarColumn"] :has(> * > * > * > [role="search"]),
-:root[data-tuic-settings*="|rightSidebar.space|"] [data-testid="sidebarColumn"] :has(> [data-testid="placementTracking"] [data-testid="pill-contents-container"]),
-:root[data-tuic-settings*="|rightSidebar.osusumeUser|"] [data-testid="sidebarColumn"] :has([data-testid="UserCell"]):has(> * > aside > a[href^="/i/connect_people"]),
-:root[data-tuic-settings*="|rightSidebar.relevantPeople|"] [data-testid="sidebarColumn"] :has(> aside [data-testid="UserCell"]):not(:has(> * > aside > a[href^="/i/connect_people"])) {
+:root[data-tuic-settings*="|rightSidebar.searchBox|"] [data-testid="sidebarColumn"] div:has(> div > div > div > form[role="search"]),
+:root[data-tuic-settings*="|rightSidebar.space|"] [data-testid="sidebarColumn"] div:has(> [data-testid="placementTracking"] [data-testid="pill-contents-container"]),
+:root[data-tuic-settings*="|rightSidebar.osusumeUser|"] [data-testid="sidebarColumn"] div:has([data-testid="UserCell"]):has(> div > aside > a[href^="/i/connect_people"]),
+:root[data-tuic-settings*="|rightSidebar.relevantPeople|"] [data-testid="sidebarColumn"] div:has(> aside [data-testid="UserCell"]):not(:has(> div > aside > a[href^="/i/connect_people"])) {
     display: none !important;
 }
 
@@ -67,10 +67,10 @@
 
 /* プロフィール周り */
 :root[data-tuic-settings*="|profileSetting.invisible.subscribe-profile|"] [data-testid="userActions"] + [style*="border-color"][style*="rgb(201, 54, 204)"],
-:root[data-tuic-settings*="|profileSetting.invisible.profileHighlights|"] :has(> [role="tab"][href$="/highlights"]),
-:root[data-tuic-settings*="|profileSetting.invisible.profileArticles|"] :has(> [role="tab"][href$="/articles"]),
-:root[data-tuic-settings*="|profileSetting.invisible.profileAffiliates|"] :has(> [role="tab"][href$="/affiliates"]),
-:root[data-tuic-settings*="|profileSetting.invisible.profilePagePremium|"] [data-testid="primaryColumn"] :has(> * > [role="link"][href="/i/premium_sign_up"]),
+:root[data-tuic-settings*="|profileSetting.invisible.profileHighlights|"] div[role="presentation"]:has(> [role="tab"][href$="/highlights"]),
+:root[data-tuic-settings*="|profileSetting.invisible.profileArticles|"] div[role="presentation"]:has(> [role="tab"][href$="/articles"]),
+:root[data-tuic-settings*="|profileSetting.invisible.profileAffiliates|"] div[role="presentation"]:has(> [role="tab"][href$="/affiliates"]),
+:root[data-tuic-settings*="|profileSetting.invisible.profilePagePremium|"] [data-testid="primaryColumn"] div:has(> div > [role="link"][href="/i/premium_sign_up"]),
 :root[data-tuic-settings*="|profileSetting.invisible.profileSummary|"]
     :is([data-testid^="UserAvatar-Container-"] + div, [data-testid="primaryColumn"] div:has(> [data-testid="app-bar-back"]) + div + div)
     button:has(

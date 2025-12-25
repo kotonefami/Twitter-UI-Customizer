@@ -119,6 +119,7 @@ export function applySystemCss() {
         "profileSetting.invisible.profileHighlights",
         "profileSetting.invisible.profileArticles",
         "profileSetting.invisible.profileSummary",
+        "profileSetting.invisible.profilePagePremium",
     ];
     let settingsOutput = "|";
     for (const elem of settingsArr) {

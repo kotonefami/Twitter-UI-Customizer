@@ -259,7 +259,7 @@ function placeTweetTopButtons(articleInfo: ArticleInfomation) {
         }
     }
     if (articleBase.querySelector(`:not(.${ProcessedClass}) > button ${grokIconSelector}`)) {
-        const grokElement = articleBase.querySelector<HTMLElement>(`:has(> button ${grokIconSelector})`);
+        const grokElement = articleBase.querySelector<HTMLElement>(`div:has(> button ${grokIconSelector})`);
         if (grokElement && grokElement.parentElement.contains(tweetTopParent)) {
             processElement(grokElement);
             hideElement(grokElement);
