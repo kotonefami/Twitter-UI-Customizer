@@ -89,7 +89,7 @@
 - [@surapunoyousei](https://github.com/surapunoyousei) (デバッグしやすく)
 - [@typeling1578](https://github.com/typeling1578) (リファクタリング)
 - [@regularentropy](https://github.com/regularentropy) (リファクタリング・パフォーマンス向上)
-- @GreenDotBlue99 (タブの固定機能)
+- [@BD9Max](https://github.com/BD9Max) (タブの固定機能)
 - [@nyanrus](https://github.com/nyanrus) (設定画面の改良＆リファクタリング)
 
 ### Crowdin
