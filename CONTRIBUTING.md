@@ -40,12 +40,14 @@ Twitter 以外で表示される TUIC の UI (例: 更新通知、拡張機能�
 
 ## 開発者の方へ
 
-**Chromium、またはFirefoxでのデバッグの詳細は [`docs/vite_build`](./docs/vite_build.md)を御覧ください。**
+`pnpm debug` を利用すると、拡張機能を再読み込みしなくてもデバッグ中に加えた変更が反映されます。
+詳細は [`docs/vite_build`](./docs/vite_build.md)を御覧ください。
 
 manifest.jsonなどのデバッグ・ソースコードの情報は[`docs/manifest_build`](./docs/manifest_build.md)を見てください！
 
 > [!TIP]
-> 環境変数は、[.env.local](.env.local.example) 内に書き込むことでも指定できます。
+> 環境変数は `.env.local` 内に書き込むことを推奨します。
+> 詳細は、[`.env.local.example`](.env.local.example) を参照してください。
 
 ### Firefox
 
@@ -65,9 +67,6 @@ pnpm debug:firefox
 
 > [!TIP]
 > プロファイルは `about:profiles` などで作成、および Root Directory のパスを確認できます。
-
-> [!TIP]
-> web-ext を使用しているため、Firefox ではブラウザーをリロードしなくてもデバッグ中に加えた変更が反映されます。
 
 ### Chromium
 
