@@ -8,12 +8,12 @@
 > yarn を使用していた方は、以下の手法で pnpm に移行をお願いいたします。
 > - pnpm をインストールする
 > - `node_modules` を削除する
-> - `pnpm i --frozen-lockfile` を実行する
+> - `pnpm i` を実行する
 
 > [!NOTE]
 > **ビルドツール Vite 導入により、デバッグ方法が変わりました！** (2023/09/02)
 > 
-> ビルド及びデバッグ方法については、[docs/vite_build](./docs/vite_build.md)を御覧ください。  
+> ビルド及びデバッグ方法については、[`docs/vite_build`](./docs/vite_build.md)を御覧ください。  
 > この変更は[`41dff7b`](https://github.com/Ablaze-MIRAI/Twitter-UI-Customizer/commit/41dff7b4e8c01c33ef04d05b8ff5e9e649f2719d) (2023年9月2日)からの適用です。
 
 ## 翻訳者の方へ
@@ -50,7 +50,7 @@ manifest.jsonなどのデバッグ・ソースコードの情報は[`docs/manife
 ### Firefox
 
 ```bash
-pnpm i --frozen-lockfile
+pnpm i
 
 TUIC_WEBEXT_FIREFOX_PROFILE="C:\Users\user\AppData\Roaming\Mozilla\Firefox\Profiles\h6jvvuqd.dev_tuic"
 

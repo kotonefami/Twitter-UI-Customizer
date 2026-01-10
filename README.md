@@ -31,7 +31,7 @@
 
 ## 貢献者様へ
 
-詳しくは[CONTRIBUTING.md](./CONTRIBUTING.md)を御覧ください。
+詳しくは[`CONTRIBUTING.md`](./CONTRIBUTING.md)を御覧ください。
 
 ## 機能
 
